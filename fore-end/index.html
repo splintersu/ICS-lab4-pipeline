@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+
+    <style type="text/css">
+      #ControlPanel
+      {
+        border: 1px solid black;
+        position: absolute;
+        left:940px;
+        top:270px;
+      }
+      #VariableList
+      {
+        width:865px;
+        height: 250px;
+        position: absolute;
+        left:200px;
+        top:10px;
+      }
+      #Code
+      {
+        position: absolute;
+        left:200px;
+        top:270px;
+        width:720px;
+        height:230px;
+        padding-left:10px;
+      }
+      #Codeline1
+      {
+        position: absolute;
+        top:10px;
+        width: 720px;
+      }
+      #Codeline2
+      {
+        position: absolute;
+        top:40px;
+        width: 720px;
+      }
+      #Codeline3
+      {
+        position: absolute;
+        top:70px;
+        width: 720px;
+      }
+      #Codeline4
+      {
+        position: absolute;
+        top:100px;
+        width: 720px;
+      }
+      #Codeline5
+      {
+        position: absolute;
+        top:130px;
+        width: 720px;
+      }
+      
+      #RegisterList
+      {
+        position: absolute;
+        left : 98px;
+        top : 165px;
+      }
+      #PreviousStep
+      {
+        position: absolute;
+        top : 0px;
+      }
+      #NextStep
+      {
+        position: absolute;
+        top:55px;
+      }
+      #Run
+      {
+        position: absolute;
+        top:110px;
+      }
+      #Stop
+      {
+        position: absolute;
+        top:165px;
+      }
+      #ConditionCode
+      {
+        position: absolute;
+        left:150px;
+        top:75px;
+      }
+      #ShowClock
+      {
+        position: absolute;
+        left:120px;
+        top:20px;
+      }
+      #TrafficLight
+      {
+        position: absolute;
+        left:970px;
+        top:20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="MAIN"></div>
+    <script type="text/babel">
+    var MyReactButton=React.createClass({
+          getDefaultProps:function(){
+              return{
+                  children:'button',
+                  pattern:'Primary'
+              };
+          },
+          getInitialState:function(){
+              return{
+                      opacity:'0.87',
+              };
+          },
+          handleMouseover:function(){
+                  this.setState({
+                  opacity:'0.92'
+              });
+          },
+          handleMouseout:function(){
+              this.setState({
+                  opacity:'0.87'
+              });
+          },
+          handleMouseUp:function(){
+            this.setState({opacity:'0.92'});
+          },
+          handleMouseDown:function(){
+            this.setState({opacity:'1'});
+          },
+          render:function(){
+              var styles={
+                  Primary:{
+                      opacity:this.state.opacity,
+                      backgroundColor:'#2e6da4',
+                      padding:'6px 12px',
+                      color:'#fff',
+                      border:'1px solid #2e6da4',
+                      borderRadius:'4px',
+                      fontSize:'34px',
+                      width:'120px'
+                  },
+                  Success:{
+                      opacity:this.state.opacity,
+                      backgroundColor:'#4cae4c',
+                      padding:'6px 12px',
+                      color:'#fff',
+                      border:'1px solid #4cae4c',
+                      borderRadius:'4px',
+                      fontSize:'34px',
+                      width:'120px'
+                  },
+                  Danger:{
+                      opacity:this.state.opacity,
+                      backgroundColor:'#d43f3a',
+                      padding:'6px 12px',
+                      color:'#fff',
+                      border:'1px solid #d43f3a',
+                      borderRadius:'4px',
+                      fontSize:'34px',
+                      width:'120px'
+                  },
+              };
+              return(
+                   <button style={styles[this.props.pattern]} className={this.props.className} onClick={this.props.handleClick} onMouseOver={this.handleMouseover} onMouseOut={this.handleMouseout} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>{this.props.children}</button>
+                   );
+           }
+      });
+
+    var ExhibitVarList = React.createClass({
+      render : function(){
+        
+        var styles={width : '80px' , color : this.props.color , border : "1px solid black"};
+        var style2 = {width : '80px' , color : this.props.color};
+        return <table class="VariableTable">
+          <thead>
+          <tr>
+          {
+            this.props.list.map(
+              function(item)
+              {
+                return <th key={item.key} style={style2}> {item.key} </th>
+              }
+            )
+          }
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          {
+            this.props.list.map(
+              function(item)
+              {
+                return <td key={item.key} style={styles}> {item.value} </td>
+              }
+            )
+          }
+          </tr>
+          </tbody>
+          </table>
+      }
+    })
+
+    var Onelinecode = React.createClass({
+      getInitialState : function(){
+        return {backgroundcolor : 'transparent' , fontnow : ""}
+      },
+      handleMouseOver : function(){
+        this.setState({backgroundcolor : this.props.backgroundcolor , fontnow : "bold"})
+      },
+      handleMouseOut : function(){
+        this.setState({backgroundcolor : 'transparent' , fontnow : ""})
+      },
+      render : function()
+      {
+        var styles = {
+          color : this.props.color , 
+          background : this.state.backgroundcolor,
+          fontSize : this.props.fontSize,
+          fontWeight : this.state.fontnow
+        }
+        return <div style={styles} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
+          {this.props.code}
+          </div>
+      }
+    })
+
+    var CodeViewer = React.createClass({
+      render : function()
+      {
+        return <div>
+          <div id="Codeline1">
+            <Onelinecode color="#B8860B" code={this.props.code[0]} backgroundcolor="#FFFFBB" fontSize="20px" />
+          </div>
+          <div id="Codeline2">
+          <Onelinecode color="#0000FF" code={this.props.code[1]} backgroundcolor="#CCDDFF" fontSize="20px" />
+          </div>
+          <div id="Codeline3">
+          <Onelinecode color="#8B4513" code={this.props.code[2]} backgroundcolor="#FFEE99" fontSize="20px" />
+          </div>
+          <div id="Codeline4">
+          <Onelinecode color="#EE0000" code={this.props.code[3]} backgroundcolor="#FFC8B4" fontSize="20px" /> 
+          </div>
+          <div id="Codeline5">
+          <Onelinecode color="#7A378B" code={this.props.code[4]} backgroundcolor="#E8CCFF" fontSize="20px" />
+          </div>
+        </div>
+      }
+    })
+
+    var MyRegisterList = React.createClass({
+      render : function(){
+        var style1 = {
+          fontFamily : "SimHei",
+          fontSize : "16px"
+        };
+        var style2 = {
+          fontSize : "16px",
+          fontFamily : "Courier New"
+        }; 
+        return <div>
+          <div style={style1}>%eax</div>
+          <div style={style2}>{this.props.regvalue["eax"]}</div>
+          <div style={style1}>%ecx</div>
+          <div style={style2}>{this.props.regvalue["ecx"]}</div>
+          <div style={style1}>%edx</div>
+          <div style={style2}>{this.props.regvalue["edx"]}</div>
+          <div style={style1}>%ebx</div>
+          <div style={style2}>{this.props.regvalue["ebx"]}</div>
+          <div style={style1}>%esp</div>
+          <div style={style2}>{this.props.regvalue["esp"]}</div>
+          <div style={style1}>%ebp</div>
+          <div style={style2}>{this.props.regvalue["ebp"]}</div>
+          <div style={style1}>%esi</div>
+          <div style={style2}>{this.props.regvalue["esi"]}</div>
+          <div style={style1}>%edi</div>
+          <div style={style2}>{this.props.regvalue["edi"]}</div>
+        </div>
+      }
+    })
+
+    var MyConditionCode = React.createClass({
+      render : function(){
+        var style1 = {
+          fontFamily : "Courier New",
+          fontSize : "16px"
+        };
+        var style2 = {
+          fontSize : "16px",
+          fontFamily : "Courier New"
+        }; 
+        return <div>
+          <div><span style={style1}>ZF</span>:<span style={style2}>{this.props.conditionvalue["ZF"]}</span></div>
+          <div><span style={style1}>SF</span>:<span style={style2}>{this.props.conditionvalue["SF"]}</span></div>
+          <div><span style={style1}>OF</span>:<span style={style2}>{this.props.conditionvalue["OF"]}</span></div>
+        </div>
+      }
+    })
+
+    var MyShowClock = React.createClass({
+      render : function(){
+        var style1 = {fontFamily : "Courier New" , fontWeight : "bold" , fontSize : "20px"}
+        var style2 = {fontFamily : "Courier New"}
+        return <div>
+          <div style={style1}>CLOCK</div>
+          <div style={style2}>{this.props.clock}</div>
+        </div>
+      }
+    })
+
+    var MyTrafficLight = React.createClass({
+      render : function(){
+        var style1 = {width : "75px" , height : "60px" , background : this.props.trafficlight , borderRadius : "20px"}
+        return <div style={style1}></div>
+      }
+    })
+
+    var complete_data = 
+      [
+        {
+            "CONDITIONVALUE" : {"ZF" : "0" , SF : "1" , OF : "1"},
+            "REGVALUE" : {"eax" : "0x00000000",
+                          "ebx" : "0x00000000",
+                          "ecx" : "0x00000000",
+                          "edx" : "0x00000000",
+                          "ebp" : "0x00000000",
+                          "esp" : "0x00000000",
+                          "esi" : "0x00000000",
+                          "edi" : "0x00000000"},
+            "CODE" : ["addl %eax , %ebx" , "nop" , "nop" , "nop" , "nop"],
+            "FETCH" : [
+              {"key":"predPC" , "value":"0x00000000"},
+              {"key":"instructions" , "value":0},
+              {"key":"CPI" , "value":0}
+            ],
+            "DECODE" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"ifun" , "value":0},
+              {"key":"rA" , "value":"R_NONE"},
+              {"key":"rB" , "value":"R_NONE"},
+              {"key":"valC" , "value":"0x00000000"},
+              {"key":"valP" , "value":"0x00000000"}
+            ],
+            "EXECUTE" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"ifun" , "value":0},
+              {"key":"valC" , "value":0},
+              {"key":"valA" , "value":0},
+              {"key":"valB" , "value":0},
+              {"key":"dstE" , "value":0},
+              {"key":"dstM" , "value":0},
+              {"key":"srcA" , "value":0},
+              {"key":"srcB" , "value":0}
+            ],
+            "MEMORY" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"valE" , "value":0},
+              {"key":"valA" , "value":0},
+              {"key":"dstE" , "value":0},
+              {"key":"dstM" , "value":0}
+            ],
+            "WRITE BACK" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"valE" , "value":0},
+              {"key":"valM" , "value":0},
+              {"key":"dstE" , "value":0},
+              {"key":"dstM" , "value":0},
+            ]
+        },
+        {
+            "CONDITIONVALUE" : {"ZF" : "0" , SF : "1" , OF : "1"},
+            "REGVALUE" : {"eax" : "0x00000000",
+                          "ebx" : "0x00000000",
+                          "ecx" : "0x00000000",
+                          "edx" : "0x00000000",
+                          "ebp" : "0x00000000",
+                          "esp" : "0x00000000",
+                          "esi" : "0x00000000",
+                          "edi" : "0x00000000"},
+            "CODE" : ["nop" , "addl %eax , %ebx" , "nop" , "nop" , "nop"],
+            "FETCH" : [
+              {"key":"predPC" , "value":"0x00000000"},
+              {"key":"instructions" , "value":0},
+              {"key":"CPI" , "value":0}
+            ],
+            "DECODE" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"ifun" , "value":0},
+              {"key":"rA" , "value":"R_NONE"},
+              {"key":"rB" , "value":"R_NONE"},
+              {"key":"valC" , "value":"0x00000000"},
+              {"key":"valP" , "value":"0x00000000"}
+            ],
+            "EXECUTE" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"ifun" , "value":0},
+              {"key":"valC" , "value":0},
+              {"key":"valA" , "value":0},
+              {"key":"valB" , "value":0},
+              {"key":"dstE" , "value":0},
+              {"key":"dstM" , "value":0},
+              {"key":"srcA" , "value":0},
+              {"key":"srcB" , "value":0}
+            ],
+            "MEMORY" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"valE" , "value":0},
+              {"key":"valA" , "value":0},
+              {"key":"dstE" , "value":0},
+              {"key":"dstM" , "value":0}
+            ],
+            "WRITE BACK" : [
+              {"key":"stat" , "value":"STAT_BUB"},
+              {"key":"icode" , "value":"I_HALT"},
+              {"key":"valE" , "value":0},
+              {"key":"valM" , "value":0},
+              {"key":"dstE" , "value":0},
+              {"key":"dstM" , "value":0},
+            ]
+        }
+    ]
+
+    var GlobalControler=React.createClass({
+      getInitialState : function(){
+        var clocknow = 0;
+        return {
+          clock : clocknow,
+          opt : complete_data[clocknow],
+          trafficlight : "#5555FF"
+        }
+      },
+      flashgreen : function(){
+        this.setState({trafficlight : "#33FF33"})
+        var that = this
+        var flipback = function()
+          {that.setState({trafficlight : "#5555FF"})}
+        setTimeout(flipback , 400)
+      },
+      flashred : function(){
+        this.setState({trafficlight : "#FF0000"})
+        var that = this
+        var flipback = function()
+          {that.setState({trafficlight : "#5555FF"})}
+        setTimeout(flipback , 400)
+      },
+      addonesec : function(){
+        if(this.state.clock + 1 == complete_data.length)
+          this.flashred()
+        else
+        {
+          this.flashgreen()
+          this.setState({clock : this.state.clock + 1 , opt : complete_data[this.state.clock + 1]})
+        }
+      },
+      minusonesec : function(){
+        if(this.state.clock == 0)
+          this.flashred()
+        else
+        {
+          this.flashgreen()
+          this.setState({clock : this.state.clock - 1 , opt : complete_data[this.state.clock - 1]})
+        }
+      },
+      handleclick1 : function(){
+        var newopt = this.state.opt
+        newopt["FETCH"][0]["key"] = "SUCCESS"
+        this.setState({opt : newopt})
+      },
+      render : function(){
+        return <div>
+          <div id="VariableList">
+            <div id="FETCH">
+              <ExhibitVarList list={this.state.opt["FETCH"]} color={"#B8860B"} />
+            </div>
+            <div id="DECODE">
+              <ExhibitVarList list={this.state.opt["DECODE"]} color={"#0000FF"} />
+            </div>
+            <div id="EXECUTE">
+              <ExhibitVarList list={this.state.opt["EXECUTE"]} color={"#8B4513"} />
+            </div>
+            <div id="MEMORY">
+              <ExhibitVarList list={this.state.opt["MEMORY"]} color={"#EE0000"} />
+            </div>
+            <div id="WRITE BACK">
+              <ExhibitVarList list={this.state.opt["WRITE BACK"]} color={"#7A378B"} />
+            </div>
+          </div>
+          <div id="ControlPanel">
+            <div id="PreviousStep">
+              <MyReactButton pattern="Primary" handleClick={this.minusonesec}>
+                Prev
+              </MyReactButton>
+            </div>
+            <div id="NextStep">
+              <MyReactButton pattern="Primary" handleClick={this.addonesec}>
+                Next
+              </MyReactButton>
+            </div>
+            <div id="Run">
+              <MyReactButton pattern="Success" handleClick={this.handleclick1}>
+                Run
+              </MyReactButton>
+            </div>
+            <div id="Stop">
+              <MyReactButton pattern="Danger" handleClick={this.handleclick1}>
+                Stop
+              </MyReactButton>
+            </div>
+          </div>
+          <div id="Code">
+            <CodeViewer code={this.state.opt["CODE"]} />
+          </div>
+          <div id="RegisterList">
+            <MyRegisterList regvalue={this.state.opt["REGVALUE"]} />
+          </div>
+          <div id="ConditionCode">
+            <MyConditionCode conditionvalue={this.state.opt["CONDITIONVALUE"]} />
+          </div>
+          <div id="ShowClock">
+            <MyShowClock clock={this.state.clock+""} />
+          </div>
+          <div id="TrafficLight">
+            <MyTrafficLight trafficlight={this.state.trafficlight} />
+          </div>
+        </div>
+      }
+    })
+
+    ReactDOM.render(<GlobalControler /> , document.getElementById("MAIN"))
+
+    </script>
+  </body>
+</html>
