@@ -73,10 +73,23 @@ void PCincrement()
     f_valP = f_pc + 1 + (int)need_regids + 4 * (int)need_valC;
 }
 
+map<int,pair<int,int> > cnt;
+
 void PredictPC()
 {
-    if (f_icode == IJXX || f_icode == ICALL)
-        f_predPC = f_valC;
+	if (f_icode == ICALL)
+		f_predPC = f_valC;
+	else if (f_icode == IJXX)
+	{
+		if(cnt.find(f_pc) == cnt.end())
+		{
+			cnt[f_pc] = make_pair(3 , 7);
+		}
+		if(rand() / RAND_MAX <= double(cnt[f_pc].first) /
+				(cnt[f_pc].first + cnt[f_pc].second))
+			f_predPC = f_valP;
+		else f_predPC = f_valC;	
+	}
     else f_predPC = f_valP;
 }
 
