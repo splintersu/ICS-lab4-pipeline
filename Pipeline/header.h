@@ -64,3 +64,5 @@ int memory[maxMemoryLength], memoryLength;
 
 int eax, ecx, edx, ebx, esp, ebp, esi, edi;
 bool ZF, SF, OF;
+
+bool F_stall, F_bubble, D_stall, D_bubble, E_stall, E_bubble, M_stall, M_bubble, W_stall, W_bubble;

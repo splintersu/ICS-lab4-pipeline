@@ -6,6 +6,7 @@ using namespace std;
 #include "decode.cpp"
 #include "execute.cpp"
 #include "memory.cpp"
+#include "controllogic.cpp"
 #include "upload.cpp"
 
 void Read()
@@ -55,6 +56,7 @@ void Proc()
 		Execute();
 		Decode();
 		Fetch();
+		PipelineControlLogic();
 		Upload();
 
 		Print();
