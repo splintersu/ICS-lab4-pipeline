@@ -78,7 +78,10 @@ map<int,pair<int,int> > cnt;
 void PredictPC()
 {
 	if (f_icode == ICALL)
+	{
 		f_predPC = f_valC;
+		jumped = true;
+	}
 	else if (f_icode == IJXX)
 	{
 		if(cnt.find(f_pc) == cnt.end())
@@ -87,10 +90,22 @@ void PredictPC()
 		}
 		if(rand() / RAND_MAX <= double(cnt[f_pc].first) /
 				(cnt[f_pc].first + cnt[f_pc].second))
+		{
 			f_predPC = f_valP;
-		else f_predPC = f_valC;	
+			jumped = false;
+			swap(f_valC , f_valP);
+		}
+		else
+		{
+			f_predPC = f_valC;	
+			jumped = true;
+		}
 	}
-    else f_predPC = f_valP;
+    else
+    {
+    	f_predPC = f_valP;
+    	jumped = false;
+	}
 }
 
 void Fetch()

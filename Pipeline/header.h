@@ -57,7 +57,7 @@ int f_pc, f_icode, f_ifun, f_stat, f_predPC, f_rA, f_rB, f_valC, f_valP;
 bool imem_error, instr_valid, need_regids, need_valC;
 
 int F_predPC;
-
+bool jumped;
 
 const int maxMemoryLength = (int)1e6 + 7;
 int memory[maxMemoryLength], memoryLength;
