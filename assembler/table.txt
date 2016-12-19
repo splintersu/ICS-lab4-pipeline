@@ -1,0 +1,35 @@
+halt               00
+nop                10
+rrmovl rA,rB       20 rArB
+irmovl V,rB        30 FrB V(4bytes)
+rmmovl rA , D(rB)  40 rArB D
+mrmovl D(rB) , rA  50 rArB D
+OPl rA , rB        6fn rArB
+jXX Dest	 	   7fn Dest
+call Dest          80 Dest
+ret                90
+pushl rA           A0 rAF
+popl rA            B0 rAF
+
+addl 60
+subl 61
+andl 62
+xorl 63
+
+jmp 70
+jle 71
+jl 72
+je 73
+jne 74
+jge 75
+jg 76
+
+eax 0
+ecx 1
+edx 2
+ebx 3
+esp 4
+ebp 5
+esi 6
+edi 7
+non-register F
