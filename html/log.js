@@ -24,8 +24,8 @@ complete_data = [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
 		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"0"},
-		{"key":"rB" , "value":"0"},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"15"},
 		{"key":"valC" , "value":"0x00000000"},
 		{"key":"valP" , "value":"0x00000000"}
 	],

@@ -105,7 +105,7 @@ void set_real_instruction(int pc)
 void NeedValReg()
 {
 	need_regids = need_valC = false;
-	
+
 	switch(f_icode)
 	{
 		case IRRMOVL: case IOPL: case IPUSHL: case IPOPL:
@@ -143,6 +143,7 @@ void Instructionmemory()
 
 	NeedValReg();
 /* Set f_rA, f_rB, and f_valC */
+	cerr << "need: " << need_regids << endl;
 	if (need_regids)
 	{
 		f_rA = (memory[f_pc+1] >> 4) & 0xF;

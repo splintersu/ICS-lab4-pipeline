@@ -29,7 +29,7 @@ void Init()
 	W_stat = SAOK; W_icode = INOP;
 	M_stat = SAOK; M_icode = INOP;
 	E_stat = SAOK; E_icode = INOP; E_ifun = FNONE;
-	D_stat = SAOK; D_icode = INOP; D_ifun = FNONE;
+	D_stat = SAOK; D_icode = INOP; D_ifun = FNONE; D_rA = D_rB = RNONE;
 	F_predPC = 0;
 }
 
