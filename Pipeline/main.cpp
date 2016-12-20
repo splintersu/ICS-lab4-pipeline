@@ -134,6 +134,7 @@ void Proc()
 {
 	while (W_stat == SAOK)
 	{
+		clockcounter ++;
 		Memory();
 		Execute();
 		Decode();

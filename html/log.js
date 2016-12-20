@@ -62,7 +62,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["irmovl 128,edx" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -122,7 +122,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["irmovl 3,ecx" , "irmovl 128,edx" , "EMPTY" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -182,7 +182,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["rmmovl ecx,0(edx)" , "irmovl 3,ecx" , "irmovl 128,edx" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -242,7 +242,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["irmovl 10,ebx" , "rmmovl ecx,0(edx)" , "irmovl 3,ecx" , "irmovl 128,edx" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -302,7 +302,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["mrmovl 0(edx,eax" , "irmovl 10,ebx" , "rmmovl ecx,0(edx)" , "irmovl 3,ecx" , "irmovl 128,edx"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -362,7 +362,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["addl ebx,eax" , "mrmovl 0(edx,eax" , "irmovl 10,ebx" , "rmmovl ecx,0(edx)" , "irmovl 3,ecx"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -422,7 +422,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["halt" , "addl ebx,eax" , "mrmovl 0(edx,eax" , "irmovl 10,ebx" , "rmmovl ecx,0(edx)"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -482,7 +482,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["halt" , "halt" , "addl ebx,eax" , "mrmovl 0(edx,eax" , "irmovl 10,ebx"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -542,7 +542,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["" , "halt" , "halt" , "addl ebx,eax" , "mrmovl 0(edx,eax"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000003",
@@ -602,7 +602,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["EMPTY" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["" , "" , "halt" , "halt" , "addl ebx,eax"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000003",
