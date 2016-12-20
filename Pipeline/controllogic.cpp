@@ -3,21 +3,21 @@ void PipelineControlLogic()
     F_bubble = F_stall = false;
     if ( (E_icode == IMRMOVL || E_icode == IPOPL) && (E_dstM == d_srcA || E_dstM == d_srcB) &&
         !((D_icode == IRMMOVL || D_icode == IPUSHL) && E_dstM == d_srcA && E_dstM != d_srcB))
-        F_bubble = true;
+        F_stall = true;
     else if (IRET == D_icode ||
             (IRET == E_icode && IPUSHL != M_icode) ||
-            (IRET == M_icode && IPUSHL != W_icode)) F_bubble = true;
+            (IRET == M_icode && IPUSHL != W_icode)) F_stall = true;
 
     D_bubble = D_stall = false;
     if ( (E_icode == IMRMOVL || E_icode == IPOPL) && (E_dstM == d_srcA || E_dstM == d_srcB) &&
         !((D_icode == IRMMOVL || D_icode == IPUSHL) && E_dstM == d_srcA && E_dstM != d_srcB))
         D_stall = true;
-    if (E_icode == IJXX && !e_Cnd) D_bubble = true;
-    else if (!(E_icode == IMRMOVL || E_icode == IPOPL) && E_dstM == d_srcA && E_dstM != d_srcB)
-        D_bubble = true;
-    else if (IRET == D_icode) D_bubble = true;
-    else if (IRET == E_icode && IPUSHL != M_icode) D_bubble = true;
-    else if (IRET == M_icode && IPUSHL != W_icode) D_bubble = true;
+    if (!D_stall)
+    {
+        if (IRET == D_icode) D_bubble = true;
+        else if (IRET == E_icode && IPUSHL != M_icode) D_bubble = true;
+        else if (IRET == M_icode && IPUSHL != W_icode) D_bubble = true;
+    }
 
     E_bubble = E_stall = false;
     if (E_icode == IJXX && !e_Cnd) E_bubble = true;
