@@ -15,13 +15,13 @@ void Read()
 	memoryLength = 0;
 	while (scanf("%x", memory + memoryLength) != EOF)
 		memoryLength++;
-/*	
-	printf("input file:\n");
+
+	cerr << "input files: " ;
 	for (int i=0; i<memoryLength; i++)
-		printf("%x ", memory[i]);
-	printf("\n");
-	printf("\n");
-*/
+		cerr << memory[i] << ' ';
+	cerr << endl;
+	cerr << endl;
+
 }
 
 void Init()

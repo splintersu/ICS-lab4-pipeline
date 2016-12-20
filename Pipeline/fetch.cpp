@@ -102,6 +102,26 @@ void set_real_instruction(int pc)
 	real_instruction[clockcounter] = res;
 }
 
+void NeedValReg()
+{
+	need_regids = need_valC = false;
+	
+	switch(f_icode)
+	{
+		case IRRMOVL: case IOPL: case IPUSHL: case IPOPL:
+		case IIRMOVL: case IRMMOVL: case IMRMOVL:
+		need_regids = true; break;
+		default: need_regids = false;
+	}
+
+	switch(f_icode)
+	{
+		case IIRMOVL: case IRMMOVL: case IMRMOVL:
+		case IJXX: case ICALL:
+		need_valC = true; break;
+		default: need_valC = false;
+	}
+}
 
 void Instructionmemory()
 {
@@ -121,10 +141,20 @@ void Instructionmemory()
 	f_icode = (memory[f_pc] >> 4) & 0xF;
 	f_ifun = memory[f_pc] & 0xF;
 
+	NeedValReg();
 /* Set f_rA, f_rB, and f_valC */
-	f_rA = (memory[f_pc+1] >> 4) & 0xF;
-	f_rB = memory[f_pc+1] & 0xF;
-	f_valC = memory[f_pc+2] + (memory[f_pc+3] << 8) + (memory[f_pc+4] << 16) + (memory[f_pc+5] << 24);
+	if (need_regids)
+	{
+		f_rA = (memory[f_pc+1] >> 4) & 0xF;
+		f_rB = memory[f_pc+1] & 0xF;
+	}
+	else f_rA = f_rB = RNONE;
+
+	if (need_valC)
+	{
+		f_valC = memory[f_pc+1+need_regids] + (memory[f_pc+2+need_regids] << 8) + (memory[f_pc+3+need_regids] << 16) + (memory[f_pc+4+need_regids] << 24);
+	}
+	else f_valC = 0;
 }
 
 void Instrvalid()
@@ -147,28 +177,6 @@ void Stat()
 	else f_stat = SAOK;
 }
 
-void NeedValReg()
-{
-	switch(f_icode)
-	{
-		case IRRMOVL: case IOPL: case IPUSHL: case IPOPL:
-		case IIRMOVL: case IRMMOVL: case IMRMOVL:
-		need_regids = true; break;
-		default: need_regids = false;
-	}
-
-	switch(f_icode)
-	{
-		case IIRMOVL: case IRMMOVL: case IMRMOVL:
-		case IJXX: case ICALL:
-		need_valC = true; break;
-		default: need_valC = false;
-	}
-
-	if (!need_regids) f_rA = f_rB = RNONE;
-	if (!need_valC) f_valC = 0;
-}
-
 void PCincrement()
 {
 	f_valP = f_pc + 1 + (int)need_regids + 4 * (int)need_valC;
@@ -187,7 +195,6 @@ void Fetch()
 	Instructionmemory();
 	Instrvalid();
 	Stat();
-	NeedValReg();
 	PCincrement();
 	PredictPC();
 }

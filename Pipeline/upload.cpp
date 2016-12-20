@@ -53,10 +53,10 @@ void Upload()
     else if (!M_stall) SetM();
 
     if (E_bubble) {E_stat = SAOK; E_icode = INOP; E_ifun = FNONE;}
-    else if (!E_bubble) SetE();
+    else if (!E_stall) SetE();
 
     if (D_bubble) {D_stat = SAOK; D_icode = INOP; D_ifun = FNONE;}
-    else if (!D_bubble) SetD();
+    else if (!D_stall) SetD();
 
     if (!F_stall) F_predPC = f_predPC;
 }
