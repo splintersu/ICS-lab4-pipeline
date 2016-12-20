@@ -26,11 +26,31 @@ void Init()
 	F_predPC = 0;
 }
 
+string get_real_instruction(int pc)
+{
+	if(pc <= 0)
+		return "EMPTY";
+	if(pc > clockcounter)
+		return "ERROR";
+	return real_instruction[pc];
+}
+
 void Print()
 {
 	printf("{\n");
 	printf("	\"MEMORY_TABLE\" : [{\"addr\" : \"0x00000000\" , \"val\" : \"0x00000000\"}],\n");
-	printf("	\"CODE\" : [\"1\" , \"1\" , \"1\" , \"1\" , \"1\"],\n");
+	printf("	\"CODE\" : [\"");
+	cout << get_real_instruction(clockcounter);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 1);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 2);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 3);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 4);
+	printf("\"],\n");
+	//printf("	\"CODE\" : [\"1\" , \"1\" , \"1\" , \"1\" , \"1\"],\n");
 	printf("	\"CONDITIONVALUE\" : {\"ZF\" : \"%d\" , SF : \"%d\" , OF : \"%d\"},\n"
 		, int(ZF) , int(SF) , int(OF));
 	printf(
