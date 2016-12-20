@@ -88,7 +88,7 @@ void PredictPC()
 		{
 			cnt[f_pc] = make_pair(3 , 7);
 		}
-		if(rand() / RAND_MAX <= double(cnt[f_pc].first) /
+		if(1.0 * rand() / RAND_MAX <= double(cnt[f_pc].first) /
 				(cnt[f_pc].first + cnt[f_pc].second))
 		{
 			f_predPC = f_valP;
