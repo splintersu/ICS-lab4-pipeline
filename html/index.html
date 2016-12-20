@@ -493,8 +493,15 @@
         }
       },
       stop : function(){
-        clearInterval(this.gogogo)
-        this.setState({run_speed : -1})
+      	if(this.state.run_speed == -1)
+      	{
+      		this.setState({clock : 0 , opt:complete_data[0]});
+      	}
+      	else
+      	{
+	        clearInterval(this.gogogo)
+	        this.setState({run_speed : -1})
+        }
       },
       minusonesec : function(){
         if(this.state.clock == 0)
