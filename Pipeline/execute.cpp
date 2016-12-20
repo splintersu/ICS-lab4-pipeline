@@ -59,7 +59,7 @@ void Cond()
 {
     if (E_icode != IJXX)
     {
-        e_Cnd = false;
+        e_Cnd = true;
         return;
     }
     if (E_ifun == 0x0) e_Cnd = true;                //jmp
