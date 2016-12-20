@@ -33,11 +33,32 @@ void Init()
 	F_predPC = 0;
 }
 
+string get_real_instruction(int a)
+{
+	if(a <= 0)return "EMPTY";
+	if(a > clockcounter)return "ERROR";
+	return real_instruction[a];
+}
+
 void Print()
 {
 	printf("{\n");
 	printf("	\"CONDITIONVALUE\" : {\"ZF\" : \"%d\" , SF : \"%d\" , OF : \"%d\"},\n"
 		, int(ZF) , int(SF) , int(OF));
+	printf("	\"MEMORY_TABLE\" : [{\"addr\" : \"0x00000000\" , \"val\" : \"0x00000000\"}],\n");
+	printf("\"CODE\" : [\"");
+	cout << get_real_instruction(clockcounter);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 1);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 2);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 3);
+	printf("\" , \"");
+	cout << get_real_instruction(clockcounter - 4);
+	printf("\"],\n");
+	
+
 	printf(
 "	\"REGVALUE\" : \n\
 	{\n\
@@ -111,8 +132,6 @@ void Print()
 
 void Proc()
 {
-	printf("[\n");
-	bool st = false;
 	while (W_stat == SAOK)
 	{
 		Memory();
@@ -121,25 +140,24 @@ void Proc()
 		Fetch();
 		PipelineControlLogic();
 		Upload();
-		if(st)
-		{
-			printf(",\n");
-		}
+		printf(",\n");
 		Print();
-		st = true;
 		cerr << endl;
 	}
-	printf("]\n");
 }
 
 int main()
 {
 	freopen("machlanginput.txt", "r", stdin);
-	freopen("log.txt", "w", stdout);
+	freopen("../html/log.js", "w", stdout);
 
 	Read();
 	Init();
+
+	printf("complete_data = [\n");
+	Print();
 	Proc();
+	printf("]\n");
 
 	return 0;
 }

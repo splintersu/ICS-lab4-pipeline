@@ -41,16 +41,16 @@ void set_real_instruction(int pc)
 	}
 	if(icode == 3)
 	{
-		res = "irmovl "+string(valC) + ","+get_register_name(rB);
+		res = "irmovl "+to_string(valC) + ","+get_register_name(rB);
 	}
 	if(icode == 4)
 	{
-		res = "rmmovl "+get_register_name(rA) + ","+string(valC)+"("+
+		res = "rmmovl "+get_register_name(rA) + ","+to_string(valC)+"("+
 		get_register_name(rB) + ")";
 	}
 	if(icode == 5)
 	{
-		res = "mrmovl "+string(valC)+"("+get_register_name(rB)+","+
+		res = "mrmovl "+to_string(valC)+"("+get_register_name(rB)+","+
 		get_register_name(rA);
 	}
 	if(icode == 6)
@@ -80,12 +80,12 @@ void set_real_instruction(int pc)
 		if(ifun == 5)
 			res = "jge";
 		if(ifun == 6)
-			res = "jg"
-		res = res + " " + string(valC);
+			res = "jg";
+		res = res + " " + to_string(valC);
 	}
 	if(icode == 8)
 	{
-		res = "call " + string(valC);
+		res = "call " + to_string(valC);
 	}
 	if(icode == 9)
 	{

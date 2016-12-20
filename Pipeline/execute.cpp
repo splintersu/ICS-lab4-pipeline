@@ -69,6 +69,9 @@ void Cond()
     else if (E_ifun == 0x4) e_Cnd = !ZF;            //jne
     else if (E_ifun == 0x5) e_Cnd = (!SF) || ZF;    //jge
     else if (E_ifun == 0x6) e_Cnd = !SF;            //jg 
+    /*
+        to be finished.
+    */
 }
 
 void DstE()
