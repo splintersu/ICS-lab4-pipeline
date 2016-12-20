@@ -73,19 +73,18 @@ void PCincrement()
     f_valP = f_pc + 1 + (int)need_regids + 4 * (int)need_valC;
 }
 
-map<int,pair<int,int> > cnt;
 
 void PredictPC()
 {
 	if (f_icode == ICALL)
 	{
 		f_predPC = f_valC;
-		jumped = true;
 	}
 	else if (f_icode == IJXX)
 	{
-		if(cnt.find(f_pc) == cnt.end())
+		if(!ENABLE_JXX_PREDICTION)
 		{
+<<<<<<< HEAD
 			cnt[f_pc] = make_pair(3 , 7);
 		}
 		if(1.0 * rand() / RAND_MAX <= double(cnt[f_pc].first) /
@@ -94,17 +93,33 @@ void PredictPC()
 			f_predPC = f_valP;
 			jumped = false;
 			swap(f_valC , f_valP);
+=======
+			f_predPC = valC;
+>>>>>>> origin/master
 		}
 		else
 		{
-			f_predPC = f_valC;	
-			jumped = true;
+			if(cnt.find(f_pc) == cnt.end())
+			{
+				cnt[f_pc] = make_pair(3 , 7);
+			}
+			if(rand() / RAND_MAX <= double(cnt[f_pc].first) /
+					(cnt[f_pc].first + cnt[f_pc].second))
+			{
+				f_predPC = f_valP;
+				last_jump_state[f_pc] = false;
+				swap(f_valC , f_valP);
+			}
+			else
+			{
+				f_predPC = f_valC;	
+				last_jump_state[f_pc] = true;
+			}
 		}
 	}
     else
     {
     	f_predPC = f_valP;
-    	jumped = false;
 	}
 }
 

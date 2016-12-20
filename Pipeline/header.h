@@ -35,6 +35,7 @@
 #define     SINS 		0x3
 #define     SHLT 		0x4
 
+
 int stat;
 
 int W_stat, W_icode, W_valE, W_valM, W_dstE, W_dstM;
@@ -57,7 +58,10 @@ int f_pc, f_icode, f_ifun, f_stat, f_predPC, f_rA, f_rB, f_valC, f_valP;
 bool imem_error, instr_valid, need_regids, need_valC;
 
 int F_predPC;
-bool jumped;
+map<int , bool> last_jump_state;
+map<int,pair<int,int> > cnt;
+bool ENABLE_JXX_PREDICTION = false;
+
 
 const int maxMemoryLength = (int)1e6 + 7;
 int memory[maxMemoryLength], memoryLength;
