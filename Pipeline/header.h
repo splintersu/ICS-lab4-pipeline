@@ -30,6 +30,18 @@
 #define     ESI         0x6
 #define     EDI         0x7
 
+string get_register_name(int index)
+{
+	if(index == 0)return "eax";
+	if(index == 1)return "ecx";
+	if(index == 2)return "edx";
+	if(index == 3)return "ebx";
+	if(index == 4)return "esp";
+	if(index == 5)return "ebp";
+	if(index == 6)return "esi";
+	if(index == 7)return "edi";
+}
+
 #define     SAOK 		0x1
 #define     SADR 		0x2
 #define     SINS 		0x3
@@ -68,3 +80,4 @@ bool ZF, SF, OF;
 bool F_stall, F_bubble, D_stall, D_bubble, E_stall, E_bubble, M_stall, M_bubble, W_stall, W_bubble;
 
 int clockcounter;
+string real_instruction[1e6 + 7];

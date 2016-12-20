@@ -15,13 +15,6 @@ void Read()
 	memoryLength = 0;
 	while (scanf("%x", memory + memoryLength) != EOF)
 		memoryLength++;
-/*	
-	printf("input file:\n");
-	for (int i=0; i<memoryLength; i++)
-		printf("%x ", memory[i]);
-	printf("\n");
-	printf("\n");
-*/
 }
 
 void Init()
@@ -115,6 +108,7 @@ void Proc()
 {
 	while (W_stat == SAOK)
 	{
+		++clockcounter;
 		Memory();
 		Execute();
 		Decode();
