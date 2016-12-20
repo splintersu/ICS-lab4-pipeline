@@ -37,7 +37,7 @@ void Print()
 {
 	printf("{\n");
 	printf("	\"MEMORY_TABLE\" : [{\"addr\" : \"0x00000000\" , \"val\" : \"0x00000000\"}],\n");
-	printf("	\"CODE\" : [\"1\" , \"1\" , \"1\" , \"1\" , \"1\"]\n");
+	printf("	\"CODE\" : [\"1\" , \"1\" , \"1\" , \"1\" , \"1\"],\n");
 	printf("	\"CONDITIONVALUE\" : {\"ZF\" : \"%d\" , SF : \"%d\" , OF : \"%d\"},\n"
 		, int(ZF) , int(SF) , int(OF));
 	printf(
@@ -123,14 +123,13 @@ void Proc()
 		Upload();
 		printf(",\n");
 		Print();
-		st = true;
 	}
 }
 
 int main()
 {
 	freopen("machlanginput.txt", "r", stdin);
-	freopen("log.txt", "w", stdout);
+	freopen("../html/log.js", "w", stdout);
 
 	Read();
 	Init();
