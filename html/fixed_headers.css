@@ -1,5 +1,5 @@
 .fixed_headers {
-  width: 200px;
+  width: 240px;
   table-layout: fixed;
   border-collapse: collapse;
 }
@@ -13,11 +13,11 @@
 }
 .fixed_headers td:nth-child(1),
 .fixed_headers th:nth-child(1) {
-  min-width: 100px;
+  min-width: 110px;
 }
 .fixed_headers td:nth-child(2),
 .fixed_headers th:nth-child(2) {
-  min-width: 100px;
+  min-width: 110px;
 }
 .fixed_headers thead {
   background-color: #333;
@@ -41,7 +41,7 @@
 }
 .old_ie_wrapper {
   height: 150px;
-  width: 200px;
+  width: 240px;
   overflow-x: hidden;
   overflow-y: auto;
 }
