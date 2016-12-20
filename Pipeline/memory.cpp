@@ -26,16 +26,24 @@ void Datamemory()
 
     if (mem_read)
     {
-        if (0 < mem_addr || mem_addr >= memoryLength)
+        if (mem_addr < 0 || mem_addr >= maxMemoryLength)
             dmem_error = true;
-        else m_valM = memory[mem_addr];
+        else m_valM = memory[mem_addr] + (memory[mem_addr+1] << 8) + (memory[mem_addr+2] << 16) + (memory[mem_addr+3] << 24);
     }
 
     if (mem_write)
     {
-        if (0 < mem_addr || mem_addr >= memoryLength)
+        if (mem_addr < 0 || mem_addr >= maxMemoryLength)
             dmem_error = true;
-        else memory[mem_addr] = M_valA;
+        else
+        {
+            int tempdata = M_valA;
+            for (int i=0; i<4; i++)
+            {
+                memory[mem_addr + i] = tempdata & 0xFF;
+                tempdata >>= 8;
+            }
+        }
     }
 }
 

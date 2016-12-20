@@ -27,6 +27,7 @@ void Instructionmemory()
     f_rA = (memory[f_pc+1] >> 4) & 0xF;
     f_rB = memory[f_pc+1] & 0xF;
     f_valC = memory[f_pc+2] + (memory[f_pc+3] << 8) + (memory[f_pc+4] << 16) + (memory[f_pc+5] << 24);
+
 }
 
 void Instrvalid()

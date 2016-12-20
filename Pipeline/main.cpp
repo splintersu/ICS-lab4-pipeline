@@ -15,6 +15,8 @@ void Read()
 	memoryLength = 0;
 	while (scanf("%x", memory + memoryLength) != EOF)
 		memoryLength++;
+	for (int i=1; i<=10; i++)
+		memory[memoryLength++] = INOP;
 /*	
 	printf("input file:\n");
 	for (int i=0; i<memoryLength; i++)
@@ -36,8 +38,6 @@ void Init()
 void Print()
 {
 	printf("{\n");
-	printf("	\"MEMORY_TABLE\" : [{\"addr\" : \"0x00000000\" , \"val\" : \"0x00000000\"}],\n");
-	printf("	\"CODE\" : [\"1\" , \"1\" , \"1\" , \"1\" , \"1\"],\n");
 	printf("	\"CONDITIONVALUE\" : {\"ZF\" : \"%d\" , SF : \"%d\" , OF : \"%d\"},\n"
 		, int(ZF) , int(SF) , int(OF));
 	printf(
@@ -79,33 +79,33 @@ void Print()
 		{\"key\":\"stat\" , \"value\":\"STAT_BUB\"},\n\
 		{\"key\":\"icode\" , \"value\":\"I_HALT\"},\n\
 		{\"key\":\"ifun\" , \"value\":%d},\n\
-		{\"key\":\"valC\" , \"value\":0x%08x},\n\
-		{\"key\":\"valA\" , \"value\":0x%08x},\n\
-		{\"key\":\"valB\" , \"value\":0x%08x},\n\
-		{\"key\":\"dstE\" , \"value\":0x%08x},\n\
-		{\"key\":\"dstM\" , \"value\":0x%08x},\n\
-		{\"key\":\"srcA\" , \"value\":0x%08x},\n\
-		{\"key\":\"srcB\" , \"value\":0x%08x}\n\
+		{\"key\":\"valC\" , \"value\":%d},\n\
+		{\"key\":\"valA\" , \"value\":%d},\n\
+		{\"key\":\"valB\" , \"value\":%d},\n\
+		{\"key\":\"dstE\" , \"value\":%d},\n\
+		{\"key\":\"dstM\" , \"value\":%d},\n\
+		{\"key\":\"srcA\" , \"value\":%d},\n\
+		{\"key\":\"srcB\" , \"value\":%d}\n\
 	],\n" , E_ifun , E_valC , E_valA , E_valB , E_dstE , E_dstM , E_srcA , E_srcB);
 
 	printf(
 "	\"MEMORY\" : [\n\
 		{\"key\":\"stat\" , \"value\":\"STAT_BUB\"},\n\
 		{\"key\":\"icode\" , \"value\":\"I_HALT\"},\n\
-		{\"key\":\"valE\" , \"value\":0x%08x},\n\
-		{\"key\":\"valA\" , \"value\":0x%08x},\n\
-		{\"key\":\"dstE\" , \"value\":0x%08x},\n\
-		{\"key\":\"dstM\" , \"value\":0x%08x}\n\
+		{\"key\":\"valE\" , \"value\":%d},\n\
+		{\"key\":\"valA\" , \"value\":%d},\n\
+		{\"key\":\"dstE\" , \"value\":%d},\n\
+		{\"key\":\"dstM\" , \"value\":%d}\n\
 	],\n" , M_valE , M_valA , M_dstE , M_dstM);
 
 	printf(
 "	\"WRITE BACK\" : [\n\
 		{\"key\":\"stat\" , \"value\":\"STAT_BUB\"},\n\
 		{\"key\":\"icode\" , \"value\":\"I_HALT\"},\n\
-		{\"key\":\"valE\" , \"value\":0x%08x},\n\
-		{\"key\":\"valM\" , \"value\":0x%08x},\n\
-		{\"key\":\"dstE\" , \"value\":0x%08x},\n\
-		{\"key\":\"dstM\" , \"value\":0x%08x},\n\
+		{\"key\":\"valE\" , \"value\":%d},\n\
+		{\"key\":\"valM\" , \"value\":%d},\n\
+		{\"key\":\"dstE\" , \"value\":%d},\n\
+		{\"key\":\"dstM\" , \"value\":%d},\n\
 	]\n" , W_valE , W_valM , W_dstE , W_dstM);
 
 	printf("}\n");
@@ -113,6 +113,8 @@ void Print()
 
 void Proc()
 {
+	printf("[\n");
+	bool st = false;
 	while (W_stat == SAOK)
 	{
 		Memory();
@@ -121,21 +123,24 @@ void Proc()
 		Fetch();
 		PipelineControlLogic();
 		Upload();
-		printf(",\n");
+		if(st)
+		{
+			printf(",\n");
+		}
 		Print();
+		st = true;
 	}
+	printf("]\n");
 }
 
 int main()
 {
 	freopen("machlanginput.txt", "r", stdin);
-	freopen("../html/log.js", "w", stdout);
+	freopen("log.txt", "w", stdout);
 
 	Read();
 	Init();
-	printf("complete_data = [\n");
-	Print();
 	Proc();
-	printf("]\n");
+
 	return 0;
 }
