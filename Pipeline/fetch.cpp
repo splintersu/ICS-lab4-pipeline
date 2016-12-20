@@ -6,90 +6,6 @@ void SelectPC()
     else f_pc = F_predPC;
 }
 
-void set_real_instruction(int pc)
-{
-    string res = "";
-    int icode = (memory[pc] >> 4) & 0xF;
-    int ifun = memory[pc] & 0xF;
-    int rA = (memory[pc + 1] >> 4) & 0xF;
-    int rB = (memory[pc + 1] & 0xF);
-    int valC = memory[pc + 2] + (memory[pc + 3] << 8)
-            + (memory[pc + 4] << 16) + (memory[pc + 5] << 24);
-    if(icode == 0)
-    {
-        res = "halt";
-    }
-    if(icode == 1)
-    {
-        res = "nop";
-    }
-    if(icode == 2)
-    {
-        res = "rrmovl " + get_register_name(rA) + "," + get_register_name(rB);
-    }
-    if(icode == 3)
-    {
-        res = "irmovl "+string(valC) + ","+get_register_name(rB);
-    }
-    if(icode == 4)
-    {
-        res = "rmmovl "+get_register_name(rA) + ","+string(valC)+"("+
-            get_register_name(rB) + ")";
-    }
-    if(icode == 5)
-    {
-        res = "mrmovl "+string(valC)+"("+get_register_name(rB)+","+
-            get_register_name(rA);
-    }
-    if(icode == 6)
-    {
-        if(ifun == 0)
-            res = "addl";
-        if(ifun == 1)
-            res = "subl";
-        if(ifun == 2)
-            res = "andl";
-        if(ifun == 3)
-            res = "xorl";
-        res = res + " " + get_register_name(rA) + ","+get_register_name(rB);
-    }
-    if(icode == 7)
-    {
-        if(ifun == 0)
-            res = "jmp";
-        if(ifun == 1)
-            res = "jle";
-        if(ifun == 2)
-            res = "jl";
-        if(ifun == 3)
-            res = "je";
-        if(ifun == 4)
-            res = "jne";
-        if(ifun == 5)
-            res = "jge";
-        if(ifun == 6)
-            res = "jg"
-        res = res + " " + string(valC);
-    }
-    if(icode == 8)
-    {
-        res = "call " + string(valC);
-    }
-    if(icode == 9)
-    {
-        res = "ret";
-    }
-    if(icode == 10)
-    {
-        res = "pushl " + get_register_name(rA);
-    }
-    if(icode == 11)
-    {
-        res = "popl " + get_register_name(rA);
-    }
-    real_instruction[clockcounter] = res;
-}
-
 void Instructionmemory()
 {
     /* Set imem_error */
@@ -104,7 +20,6 @@ void Instructionmemory()
         f_ifun = FNONE;
         return;
     }
-    set_real_instruction(f_pc);
     f_icode = (memory[f_pc] >> 4) & 0xF;
     f_ifun = memory[f_pc] & 0xF;
 
@@ -112,7 +27,6 @@ void Instructionmemory()
     f_rA = (memory[f_pc+1] >> 4) & 0xF;
     f_rB = memory[f_pc+1] & 0xF;
     f_valC = memory[f_pc+2] + (memory[f_pc+3] << 8) + (memory[f_pc+4] << 16) + (memory[f_pc+5] << 24);
-
 }
 
 void Instrvalid()
