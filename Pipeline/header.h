@@ -35,7 +35,6 @@
 #define     SINS 		0x3
 #define     SHLT 		0x4
 
-
 int stat;
 
 int W_stat, W_icode, W_valE, W_valM, W_dstE, W_dstM;
@@ -58,9 +57,6 @@ int f_pc, f_icode, f_ifun, f_stat, f_predPC, f_rA, f_rB, f_valC, f_valP;
 bool imem_error, instr_valid, need_regids, need_valC;
 
 int F_predPC;
-map<int , bool> last_jump_state;
-map<int,pair<int,int> > cnt;
-bool ENABLE_JXX_PREDICTION = false;
 
 
 const int maxMemoryLength = (int)1e6 + 7;
@@ -70,3 +66,5 @@ int eax, ecx, edx, ebx, esp, ebp, esi, edi;
 bool ZF, SF, OF;
 
 bool F_stall, F_bubble, D_stall, D_bubble, E_stall, E_bubble, M_stall, M_bubble, W_stall, W_bubble;
+
+int clockcounter;

@@ -69,22 +69,6 @@ void Cond()
     else if (E_ifun == 0x4) e_Cnd = !ZF;            //jne
     else if (E_ifun == 0x5) e_Cnd = (!SF) || ZF;    //jge
     else if (E_ifun == 0x6) e_Cnd = !SF;            //jg 
-
-    if(!ENABLE_JXX_PREDICTION)return;
-    else
-    {
-	    //e_Cnd == true: you actually should have jumped!
-	    if(e_Cnd)
-	    	cnt[f_pc] = make_pair(cnt[f_pc].first + 1 , cnt[f_pc].second);
-	    else
-	    	cnt[f_pc] = make_pair(cnt[f_pc].first , cnt[f_pc].second + 1);
-
-	    //let's make e_Cnd become its real meaning: 
-	    //does your prediction turns out to be correct?
-	    if(last_jump_state[f_pc]);
-	    else
-	    	e_Cnd = !e_Cnd;
-	}
 }
 
 void DstE()

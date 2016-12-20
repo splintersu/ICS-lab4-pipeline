@@ -62,6 +62,7 @@ void Registerread(int type, int &val)
         case EBP: val = ebp; break;
         case ESI: val = esi; break;
         case EDI: val = edi; break;
+        default: val = 0;
     }
 }
 
@@ -82,7 +83,7 @@ void SelFwdA()
     else if (d_srcA == M_dstE) d_valA = M_valE;
     else if (d_srcA == W_dstM) d_valA = W_valM;
     else if (d_srcA == W_dstE) d_valA = W_valE;
-    else d_srcA = d_rvalA;
+    else d_valA = d_rvalA;
 }
 
 void FwdB()
