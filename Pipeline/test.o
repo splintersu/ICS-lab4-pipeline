@@ -1,8 +1,14 @@
-xorl %eax , %eax
-jne target
+irmovl 10000000 , %edx
 irmovl 1 , %eax
+xorl %ebx , %ebx
+je target
+irmovl 10 , %ecx
+nop
+nop
+nop
 halt
 target:
-irmovl 2 , %edx
-irmovl 3 , %ebx
-halt
+rmmovl %eax , 0 ( %edx )
+
+
+

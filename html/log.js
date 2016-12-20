@@ -62,7 +62,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["xorl eax,eax" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["irmovl 10000000,edx" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -76,18 +76,18 @@ complete_data = [
 	},
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"0x00000002"},
+		{"key":"predPC" , "value":"0x00000006"},
 		{"key":"instructions" , "value":0},
 		{"key":"CPI" , "value":0}
 	],
 	"DECODE" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":3},
-		{"key":"rA" , "value":"0"},
-		{"key":"rB" , "value":"0"},
-		{"key":"valC" , "value":"0x00000000"},
-		{"key":"valP" , "value":"0x00000002"}
+		{"key":"ifun" , "value":0},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"2"},
+		{"key":"valC" , "value":"0x00989680"},
+		{"key":"valP" , "value":"0x00000006"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"STAT_BUB"},
@@ -122,7 +122,7 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["jne 805306368" , "xorl eax,eax" , "EMPTY" , "EMPTY" , "EMPTY"],
+"CODE" : ["irmovl 1,eax" , "irmovl 10000000,edx" , "EMPTY" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -136,30 +136,30 @@ complete_data = [
 	},
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"0x0000000e"},
+		{"key":"predPC" , "value":"0x0000000c"},
 		{"key":"instructions" , "value":0},
 		{"key":"CPI" , "value":0}
 	],
 	"DECODE" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":4},
+		{"key":"ifun" , "value":0},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"15"},
-		{"key":"valC" , "value":"0x0000000e"},
-		{"key":"valP" , "value":"0x00000007"}
+		{"key":"rB" , "value":"0"},
+		{"key":"valC" , "value":"0x00000001"},
+		{"key":"valP" , "value":"0x0000000c"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":3},
-		{"key":"valC" , "value":0},
+		{"key":"ifun" , "value":0},
+		{"key":"valC" , "value":10000000},
 		{"key":"valA" , "value":0},
 		{"key":"valB" , "value":0},
-		{"key":"dstE" , "value":0},
+		{"key":"dstE" , "value":2},
 		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":0},
-		{"key":"srcB" , "value":0}
+		{"key":"srcA" , "value":15},
+		{"key":"srcB" , "value":15}
 	],
 	"MEMORY" : [
 		{"key":"stat" , "value":"STAT_BUB"},
@@ -180,189 +180,9 @@ complete_data = [
 }
 ,
 {
-	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
+	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["irmovl 2,edx" , "jne 805306368" , "xorl eax,eax" , "EMPTY" , "EMPTY"],
-	"REGVALUE" : 
-	{
-		"eax" : "0x00000000",
-		"ebx" : "0x00000000",
-		"ecx" : "0x00000000",
-		"edx" : "0x00000000",
-		"ebp" : "0x00000000",
-		"esp" : "0x00000000",
-		"esi" : "0x00000000",
-		"edi" : "0x00000000"
-	},
-	"FETCH" :
-	[
-		{"key":"predPC" , "value":"0x00000014"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
-	"DECODE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"2"},
-		{"key":"valC" , "value":"0x00000002"},
-		{"key":"valP" , "value":"0x00000014"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":4},
-		{"key":"valC" , "value":14},
-		{"key":"valA" , "value":7},
-		{"key":"valB" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":0},
-		{"key":"valA" , "value":0},
-		{"key":"dstE" , "value":0},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":0},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["irmovl 3,ebx" , "irmovl 2,edx" , "jne 805306368" , "xorl eax,eax" , "EMPTY"],
-	"REGVALUE" : 
-	{
-		"eax" : "0x00000000",
-		"ebx" : "0x00000000",
-		"ecx" : "0x00000000",
-		"edx" : "0x00000000",
-		"ebp" : "0x00000000",
-		"esp" : "0x00000000",
-		"esi" : "0x00000000",
-		"edi" : "0x00000000"
-	},
-	"FETCH" :
-	[
-		{"key":"predPC" , "value":"0x0000001a"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
-	"DECODE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"2"},
-		{"key":"valC" , "value":"0x00000002"},
-		{"key":"valP" , "value":"0x00000014"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"valC" , "value":14},
-		{"key":"valA" , "value":7},
-		{"key":"valB" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":0},
-		{"key":"valA" , "value":7},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":0},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":0},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["irmovl 1,eax" , "irmovl 3,ebx" , "irmovl 2,edx" , "jne 805306368" , "xorl eax,eax"],
-	"REGVALUE" : 
-	{
-		"eax" : "0x00000000",
-		"ebx" : "0x00000000",
-		"ecx" : "0x00000000",
-		"edx" : "0x00000000",
-		"ebp" : "0x00000000",
-		"esp" : "0x00000000",
-		"esi" : "0x00000000",
-		"edi" : "0x00000000"
-	},
-	"FETCH" :
-	[
-		{"key":"predPC" , "value":"0x0000000d"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
-	"DECODE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"0"},
-		{"key":"valC" , "value":"0x00000001"},
-		{"key":"valP" , "value":"0x0000000d"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"valC" , "value":2},
-		{"key":"valA" , "value":0},
-		{"key":"valB" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":0},
-		{"key":"valA" , "value":7},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":0},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["halt" , "irmovl 1,eax" , "irmovl 3,ebx" , "irmovl 2,edx" , "jne 805306368"],
+"CODE" : ["xorl ebx,ebx" , "irmovl 1,eax" , "irmovl 10000000,edx" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -383,9 +203,9 @@ complete_data = [
 	"DECODE" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"15"},
+		{"key":"ifun" , "value":3},
+		{"key":"rA" , "value":"3"},
+		{"key":"rB" , "value":"3"},
 		{"key":"valC" , "value":"0x00000000"},
 		{"key":"valP" , "value":"0x0000000e"}
 	],
@@ -404,9 +224,9 @@ complete_data = [
 	"MEMORY" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":0},
+		{"key":"valE" , "value":10000000},
 		{"key":"valA" , "value":0},
-		{"key":"dstE" , "value":15},
+		{"key":"dstE" , "value":2},
 		{"key":"dstM" , "value":15}
 	],
 	"WRITE BACK" : [
@@ -420,9 +240,9 @@ complete_data = [
 }
 ,
 {
-	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
+	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["irmovl 2,edx" , "halt" , "irmovl 1,eax" , "irmovl 3,ebx" , "irmovl 2,edx"],
+"CODE" : ["je 805306368" , "xorl ebx,ebx" , "irmovl 1,eax" , "irmovl 10000000,edx" , "EMPTY"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000000",
@@ -436,7 +256,67 @@ complete_data = [
 	},
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"0x00000014"},
+		{"key":"predPC" , "value":"0x0000001d"},
+		{"key":"instructions" , "value":0},
+		{"key":"CPI" , "value":0}
+	],
+	"DECODE" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"ifun" , "value":3},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"0x0000001d"},
+		{"key":"valP" , "value":"0x00000013"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"ifun" , "value":3},
+		{"key":"valC" , "value":0},
+		{"key":"valA" , "value":0},
+		{"key":"valB" , "value":0},
+		{"key":"dstE" , "value":3},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":3},
+		{"key":"srcB" , "value":3}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"valE" , "value":1},
+		{"key":"valA" , "value":0},
+		{"key":"dstE" , "value":0},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"valE" , "value":10000000},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":2},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
+"CODE" : ["rmmovl eax,0(edx)" , "je 805306368" , "xorl ebx,ebx" , "irmovl 1,eax" , "irmovl 10000000,edx"],
+	"REGVALUE" : 
+	{
+		"eax" : "0x00000000",
+		"ebx" : "0x00000000",
+		"ecx" : "0x00000000",
+		"edx" : "0x00989680",
+		"ebp" : "0x00000000",
+		"esp" : "0x00000000",
+		"esi" : "0x00000000",
+		"edi" : "0x00000000"
+	},
+	"FETCH" :
+	[
+		{"key":"predPC" , "value":"0x00000023"},
 		{"key":"instructions" , "value":0},
 		{"key":"CPI" , "value":0}
 	],
@@ -444,18 +324,138 @@ complete_data = [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
 		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"15"},
+		{"key":"rA" , "value":"0"},
 		{"key":"rB" , "value":"2"},
-		{"key":"valC" , "value":"0x00000002"},
-		{"key":"valP" , "value":"0x00000014"}
+		{"key":"valC" , "value":"0x00000000"},
+		{"key":"valP" , "value":"0x00000023"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"ifun" , "value":3},
+		{"key":"valC" , "value":29},
+		{"key":"valA" , "value":19},
+		{"key":"valB" , "value":0},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":15},
+		{"key":"srcB" , "value":15}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"valE" , "value":0},
+		{"key":"valA" , "value":0},
+		{"key":"dstE" , "value":3},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"valE" , "value":1},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":0},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
+"CODE" : ["" , "rmmovl eax,0(edx)" , "je 805306368" , "xorl ebx,ebx" , "irmovl 1,eax"],
+	"REGVALUE" : 
+	{
+		"eax" : "0x00000001",
+		"ebx" : "0x00000000",
+		"ecx" : "0x00000000",
+		"edx" : "0x00989680",
+		"ebp" : "0x00000000",
+		"esp" : "0x00000000",
+		"esi" : "0x00000000",
+		"edi" : "0x00000000"
+	},
+	"FETCH" :
+	[
+		{"key":"predPC" , "value":"0x00000029"},
+		{"key":"instructions" , "value":0},
+		{"key":"CPI" , "value":0}
+	],
+	"DECODE" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"ifun" , "value":0},
+		{"key":"rA" , "value":"0"},
+		{"key":"rB" , "value":"2"},
+		{"key":"valC" , "value":"0x00000000"},
+		{"key":"valP" , "value":"0x00000029"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
 		{"key":"ifun" , "value":0},
 		{"key":"valC" , "value":0},
-		{"key":"valA" , "value":0},
-		{"key":"valB" , "value":0},
+		{"key":"valA" , "value":1},
+		{"key":"valB" , "value":10000000},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":0},
+		{"key":"srcB" , "value":2}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"valE" , "value":0},
+		{"key":"valA" , "value":19},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"valE" , "value":0},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":3},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
+"CODE" : ["" , "" , "rmmovl eax,0(edx)" , "je 805306368" , "xorl ebx,ebx"],
+	"REGVALUE" : 
+	{
+		"eax" : "0x00000001",
+		"ebx" : "0x00000000",
+		"ecx" : "0x00000000",
+		"edx" : "0x00989680",
+		"ebp" : "0x00000000",
+		"esp" : "0x00000000",
+		"esi" : "0x00000000",
+		"edi" : "0x00000000"
+	},
+	"FETCH" :
+	[
+		{"key":"predPC" , "value":"0x0000002f"},
+		{"key":"instructions" , "value":0},
+		{"key":"CPI" , "value":0}
+	],
+	"DECODE" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"ifun" , "value":0},
+		{"key":"rA" , "value":"0"},
+		{"key":"rB" , "value":"2"},
+		{"key":"valC" , "value":"0x00000000"},
+		{"key":"valP" , "value":"0x0000002f"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"STAT_BUB"},
+		{"key":"icode" , "value":"I_HALT"},
+		{"key":"ifun" , "value":0},
+		{"key":"valC" , "value":0},
+		{"key":"valA" , "value":10000000},
+		{"key":"valB" , "value":10000000},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
 		{"key":"srcA" , "value":15},
@@ -464,9 +464,9 @@ complete_data = [
 	"MEMORY" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":1},
-		{"key":"valA" , "value":0},
-		{"key":"dstE" , "value":0},
+		{"key":"valE" , "value":10000000},
+		{"key":"valA" , "value":1},
+		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
 	"WRITE BACK" : [
@@ -482,73 +482,13 @@ complete_data = [
 {
 	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
 	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["irmovl 3,ebx" , "irmovl 2,edx" , "halt" , "irmovl 1,eax" , "irmovl 3,ebx"],
-	"REGVALUE" : 
-	{
-		"eax" : "0x00000000",
-		"ebx" : "0x00000000",
-		"ecx" : "0x00000000",
-		"edx" : "0x00000000",
-		"ebp" : "0x00000000",
-		"esp" : "0x00000000",
-		"esi" : "0x00000000",
-		"edi" : "0x00000000"
-	},
-	"FETCH" :
-	[
-		{"key":"predPC" , "value":"0x0000001a"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
-	"DECODE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"3"},
-		{"key":"valC" , "value":"0x00000003"},
-		{"key":"valP" , "value":"0x0000001a"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"ifun" , "value":0},
-		{"key":"valC" , "value":2},
-		{"key":"valA" , "value":1},
-		{"key":"valB" , "value":1},
-		{"key":"dstE" , "value":2},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":1},
-		{"key":"valA" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"STAT_BUB"},
-		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":1},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":0},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "1" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [{"addr" : "0x00000000" , "val" : "0x00000000"}],
-"CODE" : ["halt" , "irmovl 3,ebx" , "irmovl 2,edx" , "halt" , "irmovl 1,eax"],
+"CODE" : ["" , "" , "" , "rmmovl eax,0(edx)" , "je 805306368"],
 	"REGVALUE" : 
 	{
 		"eax" : "0x00000001",
 		"ebx" : "0x00000000",
 		"ecx" : "0x00000000",
-		"edx" : "0x00000000",
+		"edx" : "0x00989680",
 		"ebp" : "0x00000000",
 		"esp" : "0x00000000",
 		"esi" : "0x00000000",
@@ -556,7 +496,7 @@ complete_data = [
 	},
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"0x0000001b"},
+		{"key":"predPC" , "value":"0x00000035"},
 		{"key":"instructions" , "value":0},
 		{"key":"CPI" , "value":0}
 	],
@@ -564,19 +504,19 @@ complete_data = [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
 		{"key":"ifun" , "value":0},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"15"},
+		{"key":"rA" , "value":"0"},
+		{"key":"rB" , "value":"2"},
 		{"key":"valC" , "value":"0x00000000"},
-		{"key":"valP" , "value":"0x0000001b"}
+		{"key":"valP" , "value":"0x00000035"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
 		{"key":"ifun" , "value":0},
-		{"key":"valC" , "value":3},
-		{"key":"valA" , "value":0},
-		{"key":"valB" , "value":0},
-		{"key":"dstE" , "value":3},
+		{"key":"valC" , "value":0},
+		{"key":"valA" , "value":10000000},
+		{"key":"valB" , "value":10000000},
+		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
 		{"key":"srcA" , "value":15},
 		{"key":"srcB" , "value":15}
@@ -584,15 +524,15 @@ complete_data = [
 	"MEMORY" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":1},
-		{"key":"valA" , "value":0},
+		{"key":"valE" , "value":10000000},
+		{"key":"valA" , "value":1},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
 	"WRITE BACK" : [
 		{"key":"stat" , "value":"STAT_BUB"},
 		{"key":"icode" , "value":"I_HALT"},
-		{"key":"valE" , "value":1},
+		{"key":"valE" , "value":10000000},
 		{"key":"valM" , "value":0},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
