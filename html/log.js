@@ -47,8 +47,8 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "2" , 
-	"instructions" : "2" , 
+	"clockcounter" : "1" , 
+	"instructions" : "1" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
 	[
@@ -135,8 +135,8 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "3" , 
-	"instructions" : "3" , 
+	"clockcounter" : "2" , 
+	"instructions" : "2" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
 	[
@@ -223,8 +223,8 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "4" , 
-	"instructions" : "4" , 
+	"clockcounter" : "3" , 
+	"instructions" : "3" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
 	[
@@ -311,8 +311,8 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "5" , 
-	"instructions" : "5" , 
+	"clockcounter" : "4" , 
+	"instructions" : "4" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
 	[
@@ -399,8 +399,8 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "6" , 
-	"instructions" : "6" , 
+	"clockcounter" : "5" , 
+	"instructions" : "5" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
 	[
@@ -487,8 +487,8 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "7" , 
-	"instructions" : "7" , 
+	"clockcounter" : "6" , 
+	"instructions" : "6" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
 	[
@@ -575,9 +575,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "8" , 
-	"instructions" : "6" , 
-	"CPI" : "1.333" , 
+	"clockcounter" : "7" , 
+	"instructions" : "5" , 
+	"CPI" : "1.400" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -652,6 +652,94 @@ complete_data = [
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "nop" , "nop" , "jl 26" , "cmpl eax,ebx"],
+	"REGVALUE" : 
+	{
+		"eax" : "        1",
+		"ebx" : "       10",
+		"ecx" : "        1",
+		"edx" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
+		"esi" : "        0",
+		"edi" : "        0"
+	},
+	"clockcounter" : "8" , 
+	"instructions" : "6" , 
+	"CPI" : "1.333" , 
+	"FETCH" :
+	[
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"32"}	],
+	"DECODE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"7"},
+		{"key":"valC" , "value":"123456"},
+		{"key":"valP" , "value":"32"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valC" , "value":26},
+		{"key":"valA" , "value":21},
+		{"key":"valB" , "value":9},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":15},
+		{"key":"srcB" , "value":15}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":11},
+		{"key":"valA" , "value":21},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":9},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [
+		{"addr" : "0" , "val" : "048|0x30"},
+		{"addr" : "1" , "val" : "243|0xf3"},
+		{"addr" : "2" , "val" : "010|0x0a"},
+		{"addr" : "3" , "val" : "000|0x00"},
+		{"addr" : "4" , "val" : "000|0x00"},
+		{"addr" : "5" , "val" : "000|0x00"},
+		{"addr" : "6" , "val" : "048|0x30"},
+		{"addr" : "7" , "val" : "241|0xf1"},
+		{"addr" : "8" , "val" : "001|0x01"},
+		{"addr" : "9" , "val" : "000|0x00"},
+		{"addr" : "10" , "val" : "000|0x00"},
+		{"addr" : "11" , "val" : "000|0x00"},
+		{"addr" : "12" , "val" : "096|0x60"},
+		{"addr" : "13" , "val" : "016|0x10"},
+		{"addr" : "14" , "val" : "208|0xd0"},
+		{"addr" : "15" , "val" : "003|0x03"},
+		{"addr" : "16" , "val" : "114|0x72"},
+		{"addr" : "17" , "val" : "026|0x1a"},
+		{"addr" : "18" , "val" : "000|0x00"},
+		{"addr" : "19" , "val" : "000|0x00"},
+		{"addr" : "20" , "val" : "000|0x00"},
+		{"addr" : "21" , "val" : "112|0x70"},
+		{"addr" : "22" , "val" : "012|0x0c"},
+		{"addr" : "23" , "val" : "000|0x00"},
+		{"addr" : "24" , "val" : "000|0x00"},
+		{"addr" : "25" , "val" : "000|0x00"},
+		{"addr" : "26" , "val" : "048|0x30"},
+		{"addr" : "27" , "val" : "247|0xf7"},
+		{"addr" : "28" , "val" : "064|0x40"},
+		{"addr" : "29" , "val" : "226|0xe2"},
+		{"addr" : "30" , "val" : "001|0x01"},
+		{"addr" : "31" , "val" : "000|0x00"},
+		{"addr" : "32" , "val" : "000|0x00"}],
+"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
 	"REGVALUE" : 
 	{
 		"eax" : "        1",
@@ -669,19 +757,19 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"32"}	],
+		{"key":"predPC" , "value":"12"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"7"},
-		{"key":"valC" , "value":"123456"},
-		{"key":"valP" , "value":"32"}
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"12"},
+		{"key":"valP" , "value":"26"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":26},
-		{"key":"valA" , "value":21},
-		{"key":"valB" , "value":9},
+		{"key":"valC" , "value":123456},
+		{"key":"valA" , "value":11},
+		{"key":"valB" , "value":11},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
 		{"key":"srcA" , "value":15},
@@ -696,7 +784,7 @@ complete_data = [
 	],
 	"WRITE BACK" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":9},
+		{"key":"valE" , "value":11},
 		{"key":"valM" , "value":0},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -739,7 +827,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
+"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        1",
@@ -757,18 +845,18 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"12"}	],
+		{"key":"predPC" , "value":"14"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"15"},
-		{"key":"valC" , "value":"12"},
-		{"key":"valP" , "value":"26"}
+		{"key":"rA" , "value":"1"},
+		{"key":"rB" , "value":"0"},
+		{"key":"valC" , "value":"0"},
+		{"key":"valP" , "value":"14"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":123456},
-		{"key":"valA" , "value":11},
+		{"key":"valC" , "value":12},
+		{"key":"valA" , "value":26},
 		{"key":"valB" , "value":11},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -778,7 +866,7 @@ complete_data = [
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":11},
-		{"key":"valA" , "value":21},
+		{"key":"valA" , "value":11},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -827,7 +915,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
+"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        1",
@@ -845,28 +933,28 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"14"}	],
+		{"key":"predPC" , "value":"16"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"1"},
-		{"key":"rB" , "value":"0"},
+		{"key":"rA" , "value":"0"},
+		{"key":"rB" , "value":"3"},
 		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"14"}
+		{"key":"valP" , "value":"16"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":12},
-		{"key":"valA" , "value":26},
-		{"key":"valB" , "value":11},
-		{"key":"dstE" , "value":15},
+		{"key":"valC" , "value":0},
+		{"key":"valA" , "value":1},
+		{"key":"valB" , "value":1},
+		{"key":"dstE" , "value":0},
 		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
+		{"key":"srcA" , "value":1},
+		{"key":"srcB" , "value":0}
 	],
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":11},
-		{"key":"valA" , "value":11},
+		{"key":"valA" , "value":26},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -915,7 +1003,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
+"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
 	"REGVALUE" : 
 	{
 		"eax" : "        1",
@@ -933,94 +1021,6 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"16"}	],
-	"DECODE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"0"},
-		{"key":"rB" , "value":"3"},
-		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"16"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":0},
-		{"key":"valA" , "value":1},
-		{"key":"valB" , "value":1},
-		{"key":"dstE" , "value":0},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":1},
-		{"key":"srcB" , "value":0}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":11},
-		{"key":"valA" , "value":26},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":11},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [
-		{"addr" : "0" , "val" : "048|0x30"},
-		{"addr" : "1" , "val" : "243|0xf3"},
-		{"addr" : "2" , "val" : "010|0x0a"},
-		{"addr" : "3" , "val" : "000|0x00"},
-		{"addr" : "4" , "val" : "000|0x00"},
-		{"addr" : "5" , "val" : "000|0x00"},
-		{"addr" : "6" , "val" : "048|0x30"},
-		{"addr" : "7" , "val" : "241|0xf1"},
-		{"addr" : "8" , "val" : "001|0x01"},
-		{"addr" : "9" , "val" : "000|0x00"},
-		{"addr" : "10" , "val" : "000|0x00"},
-		{"addr" : "11" , "val" : "000|0x00"},
-		{"addr" : "12" , "val" : "096|0x60"},
-		{"addr" : "13" , "val" : "016|0x10"},
-		{"addr" : "14" , "val" : "208|0xd0"},
-		{"addr" : "15" , "val" : "003|0x03"},
-		{"addr" : "16" , "val" : "114|0x72"},
-		{"addr" : "17" , "val" : "026|0x1a"},
-		{"addr" : "18" , "val" : "000|0x00"},
-		{"addr" : "19" , "val" : "000|0x00"},
-		{"addr" : "20" , "val" : "000|0x00"},
-		{"addr" : "21" , "val" : "112|0x70"},
-		{"addr" : "22" , "val" : "012|0x0c"},
-		{"addr" : "23" , "val" : "000|0x00"},
-		{"addr" : "24" , "val" : "000|0x00"},
-		{"addr" : "25" , "val" : "000|0x00"},
-		{"addr" : "26" , "val" : "048|0x30"},
-		{"addr" : "27" , "val" : "247|0xf7"},
-		{"addr" : "28" , "val" : "064|0x40"},
-		{"addr" : "29" , "val" : "226|0xe2"},
-		{"addr" : "30" , "val" : "001|0x01"},
-		{"addr" : "31" , "val" : "000|0x00"},
-		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
-	"REGVALUE" : 
-	{
-		"eax" : "        1",
-		"ebx" : "       10",
-		"ecx" : "        1",
-		"edx" : "        0",
-		"ebp" : "   500000",
-		"esp" : "   500000",
-		"esi" : "        0",
-		"edi" : "        0"
-	},
-	"clockcounter" : "13" , 
-	"instructions" : "11" , 
-	"CPI" : "1.182" , 
-	"FETCH" :
-	[
-		{"key":"stat" , "value":"1"},
 		{"key":"predPC" , "value":"26"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
@@ -1103,9 +1103,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "14" , 
-	"instructions" : "10" , 
-	"CPI" : "1.400" , 
+	"clockcounter" : "13" , 
+	"instructions" : "9" , 
+	"CPI" : "1.444" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -1180,6 +1180,94 @@ complete_data = [
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "nop" , "nop" , "jl 26" , "cmpl eax,ebx"],
+	"REGVALUE" : 
+	{
+		"eax" : "        2",
+		"ebx" : "       10",
+		"ecx" : "        1",
+		"edx" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
+		"esi" : "        0",
+		"edi" : "        0"
+	},
+	"clockcounter" : "14" , 
+	"instructions" : "10" , 
+	"CPI" : "1.400" , 
+	"FETCH" :
+	[
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"32"}	],
+	"DECODE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"7"},
+		{"key":"valC" , "value":"123456"},
+		{"key":"valP" , "value":"32"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valC" , "value":26},
+		{"key":"valA" , "value":21},
+		{"key":"valB" , "value":8},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":15},
+		{"key":"srcB" , "value":15}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":12},
+		{"key":"valA" , "value":21},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":8},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [
+		{"addr" : "0" , "val" : "048|0x30"},
+		{"addr" : "1" , "val" : "243|0xf3"},
+		{"addr" : "2" , "val" : "010|0x0a"},
+		{"addr" : "3" , "val" : "000|0x00"},
+		{"addr" : "4" , "val" : "000|0x00"},
+		{"addr" : "5" , "val" : "000|0x00"},
+		{"addr" : "6" , "val" : "048|0x30"},
+		{"addr" : "7" , "val" : "241|0xf1"},
+		{"addr" : "8" , "val" : "001|0x01"},
+		{"addr" : "9" , "val" : "000|0x00"},
+		{"addr" : "10" , "val" : "000|0x00"},
+		{"addr" : "11" , "val" : "000|0x00"},
+		{"addr" : "12" , "val" : "096|0x60"},
+		{"addr" : "13" , "val" : "016|0x10"},
+		{"addr" : "14" , "val" : "208|0xd0"},
+		{"addr" : "15" , "val" : "003|0x03"},
+		{"addr" : "16" , "val" : "114|0x72"},
+		{"addr" : "17" , "val" : "026|0x1a"},
+		{"addr" : "18" , "val" : "000|0x00"},
+		{"addr" : "19" , "val" : "000|0x00"},
+		{"addr" : "20" , "val" : "000|0x00"},
+		{"addr" : "21" , "val" : "112|0x70"},
+		{"addr" : "22" , "val" : "012|0x0c"},
+		{"addr" : "23" , "val" : "000|0x00"},
+		{"addr" : "24" , "val" : "000|0x00"},
+		{"addr" : "25" , "val" : "000|0x00"},
+		{"addr" : "26" , "val" : "048|0x30"},
+		{"addr" : "27" , "val" : "247|0xf7"},
+		{"addr" : "28" , "val" : "064|0x40"},
+		{"addr" : "29" , "val" : "226|0xe2"},
+		{"addr" : "30" , "val" : "001|0x01"},
+		{"addr" : "31" , "val" : "000|0x00"},
+		{"addr" : "32" , "val" : "000|0x00"}],
+"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
 	"REGVALUE" : 
 	{
 		"eax" : "        2",
@@ -1197,19 +1285,19 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"32"}	],
+		{"key":"predPC" , "value":"12"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"7"},
-		{"key":"valC" , "value":"123456"},
-		{"key":"valP" , "value":"32"}
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"12"},
+		{"key":"valP" , "value":"26"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":26},
-		{"key":"valA" , "value":21},
-		{"key":"valB" , "value":8},
+		{"key":"valC" , "value":123456},
+		{"key":"valA" , "value":12},
+		{"key":"valB" , "value":12},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
 		{"key":"srcA" , "value":15},
@@ -1224,7 +1312,7 @@ complete_data = [
 	],
 	"WRITE BACK" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":8},
+		{"key":"valE" , "value":12},
 		{"key":"valM" , "value":0},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -1267,7 +1355,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
+"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        2",
@@ -1285,18 +1373,18 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"12"}	],
+		{"key":"predPC" , "value":"14"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"15"},
-		{"key":"valC" , "value":"12"},
-		{"key":"valP" , "value":"26"}
+		{"key":"rA" , "value":"1"},
+		{"key":"rB" , "value":"0"},
+		{"key":"valC" , "value":"0"},
+		{"key":"valP" , "value":"14"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":123456},
-		{"key":"valA" , "value":12},
+		{"key":"valC" , "value":12},
+		{"key":"valA" , "value":26},
 		{"key":"valB" , "value":12},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -1306,7 +1394,7 @@ complete_data = [
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":12},
-		{"key":"valA" , "value":21},
+		{"key":"valA" , "value":12},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -1355,7 +1443,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
+"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        2",
@@ -1373,28 +1461,28 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"14"}	],
+		{"key":"predPC" , "value":"16"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"1"},
-		{"key":"rB" , "value":"0"},
+		{"key":"rA" , "value":"0"},
+		{"key":"rB" , "value":"3"},
 		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"14"}
+		{"key":"valP" , "value":"16"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":12},
-		{"key":"valA" , "value":26},
-		{"key":"valB" , "value":12},
-		{"key":"dstE" , "value":15},
+		{"key":"valC" , "value":0},
+		{"key":"valA" , "value":1},
+		{"key":"valB" , "value":2},
+		{"key":"dstE" , "value":0},
 		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
+		{"key":"srcA" , "value":1},
+		{"key":"srcB" , "value":0}
 	],
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":12},
-		{"key":"valA" , "value":12},
+		{"key":"valA" , "value":26},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -1443,7 +1531,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
+"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
 	"REGVALUE" : 
 	{
 		"eax" : "        2",
@@ -1461,94 +1549,6 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"16"}	],
-	"DECODE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"0"},
-		{"key":"rB" , "value":"3"},
-		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"16"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":0},
-		{"key":"valA" , "value":1},
-		{"key":"valB" , "value":2},
-		{"key":"dstE" , "value":0},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":1},
-		{"key":"srcB" , "value":0}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":12},
-		{"key":"valA" , "value":26},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":12},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [
-		{"addr" : "0" , "val" : "048|0x30"},
-		{"addr" : "1" , "val" : "243|0xf3"},
-		{"addr" : "2" , "val" : "010|0x0a"},
-		{"addr" : "3" , "val" : "000|0x00"},
-		{"addr" : "4" , "val" : "000|0x00"},
-		{"addr" : "5" , "val" : "000|0x00"},
-		{"addr" : "6" , "val" : "048|0x30"},
-		{"addr" : "7" , "val" : "241|0xf1"},
-		{"addr" : "8" , "val" : "001|0x01"},
-		{"addr" : "9" , "val" : "000|0x00"},
-		{"addr" : "10" , "val" : "000|0x00"},
-		{"addr" : "11" , "val" : "000|0x00"},
-		{"addr" : "12" , "val" : "096|0x60"},
-		{"addr" : "13" , "val" : "016|0x10"},
-		{"addr" : "14" , "val" : "208|0xd0"},
-		{"addr" : "15" , "val" : "003|0x03"},
-		{"addr" : "16" , "val" : "114|0x72"},
-		{"addr" : "17" , "val" : "026|0x1a"},
-		{"addr" : "18" , "val" : "000|0x00"},
-		{"addr" : "19" , "val" : "000|0x00"},
-		{"addr" : "20" , "val" : "000|0x00"},
-		{"addr" : "21" , "val" : "112|0x70"},
-		{"addr" : "22" , "val" : "012|0x0c"},
-		{"addr" : "23" , "val" : "000|0x00"},
-		{"addr" : "24" , "val" : "000|0x00"},
-		{"addr" : "25" , "val" : "000|0x00"},
-		{"addr" : "26" , "val" : "048|0x30"},
-		{"addr" : "27" , "val" : "247|0xf7"},
-		{"addr" : "28" , "val" : "064|0x40"},
-		{"addr" : "29" , "val" : "226|0xe2"},
-		{"addr" : "30" , "val" : "001|0x01"},
-		{"addr" : "31" , "val" : "000|0x00"},
-		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
-	"REGVALUE" : 
-	{
-		"eax" : "        2",
-		"ebx" : "       10",
-		"ecx" : "        1",
-		"edx" : "        0",
-		"ebp" : "   500000",
-		"esp" : "   500000",
-		"esi" : "        0",
-		"edi" : "        0"
-	},
-	"clockcounter" : "19" , 
-	"instructions" : "15" , 
-	"CPI" : "1.267" , 
-	"FETCH" :
-	[
-		{"key":"stat" , "value":"1"},
 		{"key":"predPC" , "value":"26"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
@@ -1631,9 +1631,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "20" , 
-	"instructions" : "14" , 
-	"CPI" : "1.429" , 
+	"clockcounter" : "19" , 
+	"instructions" : "13" , 
+	"CPI" : "1.462" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -1708,6 +1708,94 @@ complete_data = [
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "nop" , "nop" , "jl 26" , "cmpl eax,ebx"],
+	"REGVALUE" : 
+	{
+		"eax" : "        3",
+		"ebx" : "       10",
+		"ecx" : "        1",
+		"edx" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
+		"esi" : "        0",
+		"edi" : "        0"
+	},
+	"clockcounter" : "20" , 
+	"instructions" : "14" , 
+	"CPI" : "1.429" , 
+	"FETCH" :
+	[
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"32"}	],
+	"DECODE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"7"},
+		{"key":"valC" , "value":"123456"},
+		{"key":"valP" , "value":"32"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valC" , "value":26},
+		{"key":"valA" , "value":21},
+		{"key":"valB" , "value":7},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":15},
+		{"key":"srcB" , "value":15}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":13},
+		{"key":"valA" , "value":21},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":7},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [
+		{"addr" : "0" , "val" : "048|0x30"},
+		{"addr" : "1" , "val" : "243|0xf3"},
+		{"addr" : "2" , "val" : "010|0x0a"},
+		{"addr" : "3" , "val" : "000|0x00"},
+		{"addr" : "4" , "val" : "000|0x00"},
+		{"addr" : "5" , "val" : "000|0x00"},
+		{"addr" : "6" , "val" : "048|0x30"},
+		{"addr" : "7" , "val" : "241|0xf1"},
+		{"addr" : "8" , "val" : "001|0x01"},
+		{"addr" : "9" , "val" : "000|0x00"},
+		{"addr" : "10" , "val" : "000|0x00"},
+		{"addr" : "11" , "val" : "000|0x00"},
+		{"addr" : "12" , "val" : "096|0x60"},
+		{"addr" : "13" , "val" : "016|0x10"},
+		{"addr" : "14" , "val" : "208|0xd0"},
+		{"addr" : "15" , "val" : "003|0x03"},
+		{"addr" : "16" , "val" : "114|0x72"},
+		{"addr" : "17" , "val" : "026|0x1a"},
+		{"addr" : "18" , "val" : "000|0x00"},
+		{"addr" : "19" , "val" : "000|0x00"},
+		{"addr" : "20" , "val" : "000|0x00"},
+		{"addr" : "21" , "val" : "112|0x70"},
+		{"addr" : "22" , "val" : "012|0x0c"},
+		{"addr" : "23" , "val" : "000|0x00"},
+		{"addr" : "24" , "val" : "000|0x00"},
+		{"addr" : "25" , "val" : "000|0x00"},
+		{"addr" : "26" , "val" : "048|0x30"},
+		{"addr" : "27" , "val" : "247|0xf7"},
+		{"addr" : "28" , "val" : "064|0x40"},
+		{"addr" : "29" , "val" : "226|0xe2"},
+		{"addr" : "30" , "val" : "001|0x01"},
+		{"addr" : "31" , "val" : "000|0x00"},
+		{"addr" : "32" , "val" : "000|0x00"}],
+"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
 	"REGVALUE" : 
 	{
 		"eax" : "        3",
@@ -1725,19 +1813,19 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"32"}	],
+		{"key":"predPC" , "value":"12"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"7"},
-		{"key":"valC" , "value":"123456"},
-		{"key":"valP" , "value":"32"}
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"12"},
+		{"key":"valP" , "value":"26"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":26},
-		{"key":"valA" , "value":21},
-		{"key":"valB" , "value":7},
+		{"key":"valC" , "value":123456},
+		{"key":"valA" , "value":13},
+		{"key":"valB" , "value":13},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
 		{"key":"srcA" , "value":15},
@@ -1752,7 +1840,7 @@ complete_data = [
 	],
 	"WRITE BACK" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":7},
+		{"key":"valE" , "value":13},
 		{"key":"valM" , "value":0},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -1795,7 +1883,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
+"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        3",
@@ -1813,18 +1901,18 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"12"}	],
+		{"key":"predPC" , "value":"14"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"15"},
-		{"key":"valC" , "value":"12"},
-		{"key":"valP" , "value":"26"}
+		{"key":"rA" , "value":"1"},
+		{"key":"rB" , "value":"0"},
+		{"key":"valC" , "value":"0"},
+		{"key":"valP" , "value":"14"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":123456},
-		{"key":"valA" , "value":13},
+		{"key":"valC" , "value":12},
+		{"key":"valA" , "value":26},
 		{"key":"valB" , "value":13},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -1834,7 +1922,7 @@ complete_data = [
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":13},
-		{"key":"valA" , "value":21},
+		{"key":"valA" , "value":13},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -1883,7 +1971,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
+"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        3",
@@ -1901,28 +1989,28 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"14"}	],
+		{"key":"predPC" , "value":"16"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"1"},
-		{"key":"rB" , "value":"0"},
+		{"key":"rA" , "value":"0"},
+		{"key":"rB" , "value":"3"},
 		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"14"}
+		{"key":"valP" , "value":"16"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":12},
-		{"key":"valA" , "value":26},
-		{"key":"valB" , "value":13},
-		{"key":"dstE" , "value":15},
+		{"key":"valC" , "value":0},
+		{"key":"valA" , "value":1},
+		{"key":"valB" , "value":3},
+		{"key":"dstE" , "value":0},
 		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
+		{"key":"srcA" , "value":1},
+		{"key":"srcB" , "value":0}
 	],
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":13},
-		{"key":"valA" , "value":13},
+		{"key":"valA" , "value":26},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -1971,7 +2059,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
+"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
 	"REGVALUE" : 
 	{
 		"eax" : "        3",
@@ -1989,94 +2077,6 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"16"}	],
-	"DECODE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"0"},
-		{"key":"rB" , "value":"3"},
-		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"16"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":0},
-		{"key":"valA" , "value":1},
-		{"key":"valB" , "value":3},
-		{"key":"dstE" , "value":0},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":1},
-		{"key":"srcB" , "value":0}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":13},
-		{"key":"valA" , "value":26},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":13},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [
-		{"addr" : "0" , "val" : "048|0x30"},
-		{"addr" : "1" , "val" : "243|0xf3"},
-		{"addr" : "2" , "val" : "010|0x0a"},
-		{"addr" : "3" , "val" : "000|0x00"},
-		{"addr" : "4" , "val" : "000|0x00"},
-		{"addr" : "5" , "val" : "000|0x00"},
-		{"addr" : "6" , "val" : "048|0x30"},
-		{"addr" : "7" , "val" : "241|0xf1"},
-		{"addr" : "8" , "val" : "001|0x01"},
-		{"addr" : "9" , "val" : "000|0x00"},
-		{"addr" : "10" , "val" : "000|0x00"},
-		{"addr" : "11" , "val" : "000|0x00"},
-		{"addr" : "12" , "val" : "096|0x60"},
-		{"addr" : "13" , "val" : "016|0x10"},
-		{"addr" : "14" , "val" : "208|0xd0"},
-		{"addr" : "15" , "val" : "003|0x03"},
-		{"addr" : "16" , "val" : "114|0x72"},
-		{"addr" : "17" , "val" : "026|0x1a"},
-		{"addr" : "18" , "val" : "000|0x00"},
-		{"addr" : "19" , "val" : "000|0x00"},
-		{"addr" : "20" , "val" : "000|0x00"},
-		{"addr" : "21" , "val" : "112|0x70"},
-		{"addr" : "22" , "val" : "012|0x0c"},
-		{"addr" : "23" , "val" : "000|0x00"},
-		{"addr" : "24" , "val" : "000|0x00"},
-		{"addr" : "25" , "val" : "000|0x00"},
-		{"addr" : "26" , "val" : "048|0x30"},
-		{"addr" : "27" , "val" : "247|0xf7"},
-		{"addr" : "28" , "val" : "064|0x40"},
-		{"addr" : "29" , "val" : "226|0xe2"},
-		{"addr" : "30" , "val" : "001|0x01"},
-		{"addr" : "31" , "val" : "000|0x00"},
-		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
-	"REGVALUE" : 
-	{
-		"eax" : "        3",
-		"ebx" : "       10",
-		"ecx" : "        1",
-		"edx" : "        0",
-		"ebp" : "   500000",
-		"esp" : "   500000",
-		"esi" : "        0",
-		"edi" : "        0"
-	},
-	"clockcounter" : "25" , 
-	"instructions" : "19" , 
-	"CPI" : "1.316" , 
-	"FETCH" :
-	[
-		{"key":"stat" , "value":"1"},
 		{"key":"predPC" , "value":"26"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
@@ -2159,9 +2159,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "26" , 
-	"instructions" : "18" , 
-	"CPI" : "1.444" , 
+	"clockcounter" : "25" , 
+	"instructions" : "17" , 
+	"CPI" : "1.471" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -2236,6 +2236,94 @@ complete_data = [
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "nop" , "nop" , "jl 26" , "cmpl eax,ebx"],
+	"REGVALUE" : 
+	{
+		"eax" : "        4",
+		"ebx" : "       10",
+		"ecx" : "        1",
+		"edx" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
+		"esi" : "        0",
+		"edi" : "        0"
+	},
+	"clockcounter" : "26" , 
+	"instructions" : "18" , 
+	"CPI" : "1.444" , 
+	"FETCH" :
+	[
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"32"}	],
+	"DECODE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"7"},
+		{"key":"valC" , "value":"123456"},
+		{"key":"valP" , "value":"32"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valC" , "value":26},
+		{"key":"valA" , "value":21},
+		{"key":"valB" , "value":6},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":15},
+		{"key":"srcB" , "value":15}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":14},
+		{"key":"valA" , "value":21},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":6},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [
+		{"addr" : "0" , "val" : "048|0x30"},
+		{"addr" : "1" , "val" : "243|0xf3"},
+		{"addr" : "2" , "val" : "010|0x0a"},
+		{"addr" : "3" , "val" : "000|0x00"},
+		{"addr" : "4" , "val" : "000|0x00"},
+		{"addr" : "5" , "val" : "000|0x00"},
+		{"addr" : "6" , "val" : "048|0x30"},
+		{"addr" : "7" , "val" : "241|0xf1"},
+		{"addr" : "8" , "val" : "001|0x01"},
+		{"addr" : "9" , "val" : "000|0x00"},
+		{"addr" : "10" , "val" : "000|0x00"},
+		{"addr" : "11" , "val" : "000|0x00"},
+		{"addr" : "12" , "val" : "096|0x60"},
+		{"addr" : "13" , "val" : "016|0x10"},
+		{"addr" : "14" , "val" : "208|0xd0"},
+		{"addr" : "15" , "val" : "003|0x03"},
+		{"addr" : "16" , "val" : "114|0x72"},
+		{"addr" : "17" , "val" : "026|0x1a"},
+		{"addr" : "18" , "val" : "000|0x00"},
+		{"addr" : "19" , "val" : "000|0x00"},
+		{"addr" : "20" , "val" : "000|0x00"},
+		{"addr" : "21" , "val" : "112|0x70"},
+		{"addr" : "22" , "val" : "012|0x0c"},
+		{"addr" : "23" , "val" : "000|0x00"},
+		{"addr" : "24" , "val" : "000|0x00"},
+		{"addr" : "25" , "val" : "000|0x00"},
+		{"addr" : "26" , "val" : "048|0x30"},
+		{"addr" : "27" , "val" : "247|0xf7"},
+		{"addr" : "28" , "val" : "064|0x40"},
+		{"addr" : "29" , "val" : "226|0xe2"},
+		{"addr" : "30" , "val" : "001|0x01"},
+		{"addr" : "31" , "val" : "000|0x00"},
+		{"addr" : "32" , "val" : "000|0x00"}],
+"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
 	"REGVALUE" : 
 	{
 		"eax" : "        4",
@@ -2253,19 +2341,19 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"32"}	],
+		{"key":"predPC" , "value":"12"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"7"},
-		{"key":"valC" , "value":"123456"},
-		{"key":"valP" , "value":"32"}
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"12"},
+		{"key":"valP" , "value":"26"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":26},
-		{"key":"valA" , "value":21},
-		{"key":"valB" , "value":6},
+		{"key":"valC" , "value":123456},
+		{"key":"valA" , "value":14},
+		{"key":"valB" , "value":14},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
 		{"key":"srcA" , "value":15},
@@ -2280,7 +2368,7 @@ complete_data = [
 	],
 	"WRITE BACK" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":6},
+		{"key":"valE" , "value":14},
 		{"key":"valM" , "value":0},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -2323,7 +2411,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
+"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        4",
@@ -2341,18 +2429,18 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"12"}	],
+		{"key":"predPC" , "value":"14"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"15"},
-		{"key":"valC" , "value":"12"},
-		{"key":"valP" , "value":"26"}
+		{"key":"rA" , "value":"1"},
+		{"key":"rB" , "value":"0"},
+		{"key":"valC" , "value":"0"},
+		{"key":"valP" , "value":"14"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":123456},
-		{"key":"valA" , "value":14},
+		{"key":"valC" , "value":12},
+		{"key":"valA" , "value":26},
 		{"key":"valB" , "value":14},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15},
@@ -2362,7 +2450,7 @@ complete_data = [
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":14},
-		{"key":"valA" , "value":21},
+		{"key":"valA" , "value":14},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -2411,7 +2499,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop" , "nop"],
+"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        4",
@@ -2429,28 +2517,28 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"14"}	],
+		{"key":"predPC" , "value":"16"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"1"},
-		{"key":"rB" , "value":"0"},
+		{"key":"rA" , "value":"0"},
+		{"key":"rB" , "value":"3"},
 		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"14"}
+		{"key":"valP" , "value":"16"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":12},
-		{"key":"valA" , "value":26},
-		{"key":"valB" , "value":14},
-		{"key":"dstE" , "value":15},
+		{"key":"valC" , "value":0},
+		{"key":"valA" , "value":1},
+		{"key":"valB" , "value":4},
+		{"key":"dstE" , "value":0},
 		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
+		{"key":"srcA" , "value":1},
+		{"key":"srcB" , "value":0}
 	],
 	"MEMORY" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"valE" , "value":14},
-		{"key":"valA" , "value":14},
+		{"key":"valA" , "value":26},
 		{"key":"dstE" , "value":15},
 		{"key":"dstM" , "value":15}
 	],
@@ -2499,7 +2587,7 @@ complete_data = [
 		{"addr" : "30" , "val" : "001|0x01"},
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12" , "nop"],
+"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
 	"REGVALUE" : 
 	{
 		"eax" : "        4",
@@ -2517,94 +2605,6 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"16"}	],
-	"DECODE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"0"},
-		{"key":"rB" , "value":"3"},
-		{"key":"valC" , "value":"0"},
-		{"key":"valP" , "value":"16"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":0},
-		{"key":"valA" , "value":1},
-		{"key":"valB" , "value":4},
-		{"key":"dstE" , "value":0},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":1},
-		{"key":"srcB" , "value":0}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":14},
-		{"key":"valA" , "value":26},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":14},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [
-		{"addr" : "0" , "val" : "048|0x30"},
-		{"addr" : "1" , "val" : "243|0xf3"},
-		{"addr" : "2" , "val" : "010|0x0a"},
-		{"addr" : "3" , "val" : "000|0x00"},
-		{"addr" : "4" , "val" : "000|0x00"},
-		{"addr" : "5" , "val" : "000|0x00"},
-		{"addr" : "6" , "val" : "048|0x30"},
-		{"addr" : "7" , "val" : "241|0xf1"},
-		{"addr" : "8" , "val" : "001|0x01"},
-		{"addr" : "9" , "val" : "000|0x00"},
-		{"addr" : "10" , "val" : "000|0x00"},
-		{"addr" : "11" , "val" : "000|0x00"},
-		{"addr" : "12" , "val" : "096|0x60"},
-		{"addr" : "13" , "val" : "016|0x10"},
-		{"addr" : "14" , "val" : "208|0xd0"},
-		{"addr" : "15" , "val" : "003|0x03"},
-		{"addr" : "16" , "val" : "114|0x72"},
-		{"addr" : "17" , "val" : "026|0x1a"},
-		{"addr" : "18" , "val" : "000|0x00"},
-		{"addr" : "19" , "val" : "000|0x00"},
-		{"addr" : "20" , "val" : "000|0x00"},
-		{"addr" : "21" , "val" : "112|0x70"},
-		{"addr" : "22" , "val" : "012|0x0c"},
-		{"addr" : "23" , "val" : "000|0x00"},
-		{"addr" : "24" , "val" : "000|0x00"},
-		{"addr" : "25" , "val" : "000|0x00"},
-		{"addr" : "26" , "val" : "048|0x30"},
-		{"addr" : "27" , "val" : "247|0xf7"},
-		{"addr" : "28" , "val" : "064|0x40"},
-		{"addr" : "29" , "val" : "226|0xe2"},
-		{"addr" : "30" , "val" : "001|0x01"},
-		{"addr" : "31" , "val" : "000|0x00"},
-		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["irmovl 123456,edi" , "jl 26" , "cmpl eax,ebx" , "addl ecx,eax" , "jmp 12"],
-	"REGVALUE" : 
-	{
-		"eax" : "        4",
-		"ebx" : "       10",
-		"ecx" : "        1",
-		"edx" : "        0",
-		"ebp" : "   500000",
-		"esp" : "   500000",
-		"esi" : "        0",
-		"edi" : "        0"
-	},
-	"clockcounter" : "31" , 
-	"instructions" : "23" , 
-	"CPI" : "1.348" , 
-	"FETCH" :
-	[
-		{"key":"stat" , "value":"1"},
 		{"key":"predPC" , "value":"26"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
@@ -2687,9 +2687,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "32" , 
-	"instructions" : "22" , 
-	"CPI" : "1.455" , 
+	"clockcounter" : "31" , 
+	"instructions" : "21" , 
+	"CPI" : "1.476" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -2764,6 +2764,94 @@ complete_data = [
 		{"addr" : "31" , "val" : "000|0x00"},
 		{"addr" : "32" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "nop" , "nop" , "jl 26" , "cmpl eax,ebx"],
+	"REGVALUE" : 
+	{
+		"eax" : "        5",
+		"ebx" : "       10",
+		"ecx" : "        1",
+		"edx" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
+		"esi" : "        0",
+		"edi" : "        0"
+	},
+	"clockcounter" : "32" , 
+	"instructions" : "22" , 
+	"CPI" : "1.455" , 
+	"FETCH" :
+	[
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"32"}	],
+	"DECODE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"rA" , "value":"15"},
+		{"key":"rB" , "value":"7"},
+		{"key":"valC" , "value":"123456"},
+		{"key":"valP" , "value":"32"}
+	],
+	"EXECUTE" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valC" , "value":26},
+		{"key":"valA" , "value":21},
+		{"key":"valB" , "value":5},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+		{"key":"srcA" , "value":15},
+		{"key":"srcB" , "value":15}
+	],
+	"MEMORY" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":15},
+		{"key":"valA" , "value":21},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15}
+	],
+	"WRITE BACK" : [
+		{"key":"stat" , "value":"1"},
+		{"key":"valE" , "value":5},
+		{"key":"valM" , "value":0},
+		{"key":"dstE" , "value":15},
+		{"key":"dstM" , "value":15},
+	]
+}
+,
+{
+	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
+	"MEMORY_TABLE" : [
+		{"addr" : "0" , "val" : "048|0x30"},
+		{"addr" : "1" , "val" : "243|0xf3"},
+		{"addr" : "2" , "val" : "010|0x0a"},
+		{"addr" : "3" , "val" : "000|0x00"},
+		{"addr" : "4" , "val" : "000|0x00"},
+		{"addr" : "5" , "val" : "000|0x00"},
+		{"addr" : "6" , "val" : "048|0x30"},
+		{"addr" : "7" , "val" : "241|0xf1"},
+		{"addr" : "8" , "val" : "001|0x01"},
+		{"addr" : "9" , "val" : "000|0x00"},
+		{"addr" : "10" , "val" : "000|0x00"},
+		{"addr" : "11" , "val" : "000|0x00"},
+		{"addr" : "12" , "val" : "096|0x60"},
+		{"addr" : "13" , "val" : "016|0x10"},
+		{"addr" : "14" , "val" : "208|0xd0"},
+		{"addr" : "15" , "val" : "003|0x03"},
+		{"addr" : "16" , "val" : "114|0x72"},
+		{"addr" : "17" , "val" : "026|0x1a"},
+		{"addr" : "18" , "val" : "000|0x00"},
+		{"addr" : "19" , "val" : "000|0x00"},
+		{"addr" : "20" , "val" : "000|0x00"},
+		{"addr" : "21" , "val" : "112|0x70"},
+		{"addr" : "22" , "val" : "012|0x0c"},
+		{"addr" : "23" , "val" : "000|0x00"},
+		{"addr" : "24" , "val" : "000|0x00"},
+		{"addr" : "25" , "val" : "000|0x00"},
+		{"addr" : "26" , "val" : "048|0x30"},
+		{"addr" : "27" , "val" : "247|0xf7"},
+		{"addr" : "28" , "val" : "064|0x40"},
+		{"addr" : "29" , "val" : "226|0xe2"},
+		{"addr" : "30" , "val" : "001|0x01"},
+		{"addr" : "31" , "val" : "000|0x00"},
+		{"addr" : "32" , "val" : "000|0x00"}],
+"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
 	"REGVALUE" : 
 	{
 		"eax" : "        5",
@@ -2781,94 +2869,6 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"32"}	],
-	"DECODE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"7"},
-		{"key":"valC" , "value":"123456"},
-		{"key":"valP" , "value":"32"}
-	],
-	"EXECUTE" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valC" , "value":26},
-		{"key":"valA" , "value":21},
-		{"key":"valB" , "value":5},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-		{"key":"srcA" , "value":15},
-		{"key":"srcB" , "value":15}
-	],
-	"MEMORY" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":15},
-		{"key":"valA" , "value":21},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15}
-	],
-	"WRITE BACK" : [
-		{"key":"stat" , "value":"1"},
-		{"key":"valE" , "value":5},
-		{"key":"valM" , "value":0},
-		{"key":"dstE" , "value":15},
-		{"key":"dstM" , "value":15},
-	]
-}
-,
-{
-	"CONDITIONVALUE" : {"ZF" : "0" , SF : "0" , OF : "0"},
-	"MEMORY_TABLE" : [
-		{"addr" : "0" , "val" : "048|0x30"},
-		{"addr" : "1" , "val" : "243|0xf3"},
-		{"addr" : "2" , "val" : "010|0x0a"},
-		{"addr" : "3" , "val" : "000|0x00"},
-		{"addr" : "4" , "val" : "000|0x00"},
-		{"addr" : "5" , "val" : "000|0x00"},
-		{"addr" : "6" , "val" : "048|0x30"},
-		{"addr" : "7" , "val" : "241|0xf1"},
-		{"addr" : "8" , "val" : "001|0x01"},
-		{"addr" : "9" , "val" : "000|0x00"},
-		{"addr" : "10" , "val" : "000|0x00"},
-		{"addr" : "11" , "val" : "000|0x00"},
-		{"addr" : "12" , "val" : "096|0x60"},
-		{"addr" : "13" , "val" : "016|0x10"},
-		{"addr" : "14" , "val" : "208|0xd0"},
-		{"addr" : "15" , "val" : "003|0x03"},
-		{"addr" : "16" , "val" : "114|0x72"},
-		{"addr" : "17" , "val" : "026|0x1a"},
-		{"addr" : "18" , "val" : "000|0x00"},
-		{"addr" : "19" , "val" : "000|0x00"},
-		{"addr" : "20" , "val" : "000|0x00"},
-		{"addr" : "21" , "val" : "112|0x70"},
-		{"addr" : "22" , "val" : "012|0x0c"},
-		{"addr" : "23" , "val" : "000|0x00"},
-		{"addr" : "24" , "val" : "000|0x00"},
-		{"addr" : "25" , "val" : "000|0x00"},
-		{"addr" : "26" , "val" : "048|0x30"},
-		{"addr" : "27" , "val" : "247|0xf7"},
-		{"addr" : "28" , "val" : "064|0x40"},
-		{"addr" : "29" , "val" : "226|0xe2"},
-		{"addr" : "30" , "val" : "001|0x01"},
-		{"addr" : "31" , "val" : "000|0x00"},
-		{"addr" : "32" , "val" : "000|0x00"}],
-"CODE" : ["addl ecx,eax" , "jmp 12" , "nop" , "nop" , "jl 26"],
-	"REGVALUE" : 
-	{
-		"eax" : "        5",
-		"ebx" : "       10",
-		"ecx" : "        1",
-		"edx" : "        0",
-		"ebp" : "   500000",
-		"esp" : "   500000",
-		"esi" : "        0",
-		"edi" : "        0"
-	},
-	"clockcounter" : "34" , 
-	"instructions" : "24" , 
-	"CPI" : "1.417" , 
-	"FETCH" :
-	[
-		{"key":"stat" , "value":"1"},
 		{"key":"predPC" , "value":"12"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
@@ -2951,9 +2951,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "35" , 
-	"instructions" : "25" , 
-	"CPI" : "1.400" , 
+	"clockcounter" : "34" , 
+	"instructions" : "24" , 
+	"CPI" : "1.417" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3039,9 +3039,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "36" , 
-	"instructions" : "26" , 
-	"CPI" : "1.385" , 
+	"clockcounter" : "35" , 
+	"instructions" : "25" , 
+	"CPI" : "1.400" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3127,9 +3127,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "37" , 
-	"instructions" : "27" , 
-	"CPI" : "1.370" , 
+	"clockcounter" : "36" , 
+	"instructions" : "26" , 
+	"CPI" : "1.385" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3215,9 +3215,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "38" , 
-	"instructions" : "26" , 
-	"CPI" : "1.462" , 
+	"clockcounter" : "37" , 
+	"instructions" : "25" , 
+	"CPI" : "1.480" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -3303,9 +3303,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "39" , 
-	"instructions" : "27" , 
-	"CPI" : "1.444" , 
+	"clockcounter" : "38" , 
+	"instructions" : "26" , 
+	"CPI" : "1.462" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3391,9 +3391,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "40" , 
-	"instructions" : "28" , 
-	"CPI" : "1.429" , 
+	"clockcounter" : "39" , 
+	"instructions" : "27" , 
+	"CPI" : "1.444" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3479,9 +3479,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "41" , 
-	"instructions" : "29" , 
-	"CPI" : "1.414" , 
+	"clockcounter" : "40" , 
+	"instructions" : "28" , 
+	"CPI" : "1.429" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3567,9 +3567,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "42" , 
-	"instructions" : "30" , 
-	"CPI" : "1.400" , 
+	"clockcounter" : "41" , 
+	"instructions" : "29" , 
+	"CPI" : "1.414" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3655,9 +3655,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "43" , 
-	"instructions" : "31" , 
-	"CPI" : "1.387" , 
+	"clockcounter" : "42" , 
+	"instructions" : "30" , 
+	"CPI" : "1.400" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3743,9 +3743,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "44" , 
-	"instructions" : "30" , 
-	"CPI" : "1.467" , 
+	"clockcounter" : "43" , 
+	"instructions" : "29" , 
+	"CPI" : "1.483" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -3831,9 +3831,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "45" , 
-	"instructions" : "31" , 
-	"CPI" : "1.452" , 
+	"clockcounter" : "44" , 
+	"instructions" : "30" , 
+	"CPI" : "1.467" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -3919,9 +3919,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "46" , 
-	"instructions" : "32" , 
-	"CPI" : "1.438" , 
+	"clockcounter" : "45" , 
+	"instructions" : "31" , 
+	"CPI" : "1.452" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4007,9 +4007,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "47" , 
-	"instructions" : "33" , 
-	"CPI" : "1.424" , 
+	"clockcounter" : "46" , 
+	"instructions" : "32" , 
+	"CPI" : "1.438" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4095,9 +4095,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "48" , 
-	"instructions" : "34" , 
-	"CPI" : "1.412" , 
+	"clockcounter" : "47" , 
+	"instructions" : "33" , 
+	"CPI" : "1.424" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4183,9 +4183,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "49" , 
-	"instructions" : "35" , 
-	"CPI" : "1.400" , 
+	"clockcounter" : "48" , 
+	"instructions" : "34" , 
+	"CPI" : "1.412" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4271,9 +4271,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "50" , 
-	"instructions" : "34" , 
-	"CPI" : "1.471" , 
+	"clockcounter" : "49" , 
+	"instructions" : "33" , 
+	"CPI" : "1.485" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -4359,9 +4359,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "51" , 
-	"instructions" : "35" , 
-	"CPI" : "1.457" , 
+	"clockcounter" : "50" , 
+	"instructions" : "34" , 
+	"CPI" : "1.471" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4447,9 +4447,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "52" , 
-	"instructions" : "36" , 
-	"CPI" : "1.444" , 
+	"clockcounter" : "51" , 
+	"instructions" : "35" , 
+	"CPI" : "1.457" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4535,9 +4535,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "53" , 
-	"instructions" : "37" , 
-	"CPI" : "1.432" , 
+	"clockcounter" : "52" , 
+	"instructions" : "36" , 
+	"CPI" : "1.444" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4623,9 +4623,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "54" , 
-	"instructions" : "38" , 
-	"CPI" : "1.421" , 
+	"clockcounter" : "53" , 
+	"instructions" : "37" , 
+	"CPI" : "1.432" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4711,9 +4711,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "55" , 
-	"instructions" : "39" , 
-	"CPI" : "1.410" , 
+	"clockcounter" : "54" , 
+	"instructions" : "38" , 
+	"CPI" : "1.421" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4799,9 +4799,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "56" , 
-	"instructions" : "38" , 
-	"CPI" : "1.474" , 
+	"clockcounter" : "55" , 
+	"instructions" : "37" , 
+	"CPI" : "1.486" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -4887,9 +4887,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "57" , 
-	"instructions" : "39" , 
-	"CPI" : "1.462" , 
+	"clockcounter" : "56" , 
+	"instructions" : "38" , 
+	"CPI" : "1.474" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -4975,9 +4975,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "58" , 
-	"instructions" : "40" , 
-	"CPI" : "1.450" , 
+	"clockcounter" : "57" , 
+	"instructions" : "39" , 
+	"CPI" : "1.462" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5063,9 +5063,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "59" , 
-	"instructions" : "41" , 
-	"CPI" : "1.439" , 
+	"clockcounter" : "58" , 
+	"instructions" : "40" , 
+	"CPI" : "1.450" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5151,9 +5151,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "60" , 
-	"instructions" : "42" , 
-	"CPI" : "1.429" , 
+	"clockcounter" : "59" , 
+	"instructions" : "41" , 
+	"CPI" : "1.439" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5239,9 +5239,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "61" , 
-	"instructions" : "43" , 
-	"CPI" : "1.419" , 
+	"clockcounter" : "60" , 
+	"instructions" : "42" , 
+	"CPI" : "1.429" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5327,9 +5327,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "62" , 
-	"instructions" : "42" , 
-	"CPI" : "1.476" , 
+	"clockcounter" : "61" , 
+	"instructions" : "41" , 
+	"CPI" : "1.488" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -5415,9 +5415,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "63" , 
-	"instructions" : "43" , 
-	"CPI" : "1.465" , 
+	"clockcounter" : "62" , 
+	"instructions" : "42" , 
+	"CPI" : "1.476" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5503,9 +5503,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "64" , 
-	"instructions" : "44" , 
-	"CPI" : "1.455" , 
+	"clockcounter" : "63" , 
+	"instructions" : "43" , 
+	"CPI" : "1.465" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5591,9 +5591,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "65" , 
-	"instructions" : "45" , 
-	"CPI" : "1.444" , 
+	"clockcounter" : "64" , 
+	"instructions" : "44" , 
+	"CPI" : "1.455" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5679,9 +5679,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "66" , 
-	"instructions" : "46" , 
-	"CPI" : "1.435" , 
+	"clockcounter" : "65" , 
+	"instructions" : "45" , 
+	"CPI" : "1.444" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5767,9 +5767,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "67" , 
-	"instructions" : "47" , 
-	"CPI" : "1.426" , 
+	"clockcounter" : "66" , 
+	"instructions" : "46" , 
+	"CPI" : "1.435" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5855,9 +5855,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "68" , 
-	"instructions" : "48" , 
-	"CPI" : "1.417" , 
+	"clockcounter" : "67" , 
+	"instructions" : "47" , 
+	"CPI" : "1.426" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -5943,9 +5943,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "69" , 
-	"instructions" : "49" , 
-	"CPI" : "1.408" , 
+	"clockcounter" : "68" , 
+	"instructions" : "48" , 
+	"CPI" : "1.417" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -6031,9 +6031,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"clockcounter" : "70" , 
-	"instructions" : "50" , 
-	"CPI" : "1.400" , 
+	"clockcounter" : "69" , 
+	"instructions" : "49" , 
+	"CPI" : "1.408" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -6119,9 +6119,9 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "   123456"
 	},
-	"clockcounter" : "71" , 
-	"instructions" : "50" , 
-	"CPI" : "1.420" , 
+	"clockcounter" : "70" , 
+	"instructions" : "49" , 
+	"CPI" : "1.429" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},

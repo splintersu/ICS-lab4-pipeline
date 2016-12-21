@@ -34,7 +34,7 @@ void Init()
 	E_stat = SAOK; E_icode = INOP; E_ifun = FNONE;
 	D_stat = SAOK; D_icode = INOP; D_ifun = FNONE; D_rA = D_rB = RNONE;
 	F_predPC = 0;
-	clockcounter = 1;
+	clockcounter = 0;
 
 	esp = ebp = 500000;
 
