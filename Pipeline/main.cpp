@@ -36,6 +36,7 @@ void Init()
 	F_predPC = 0;
 
 	F_real_ins = "EMPTY";
+	//F_real_ins = set_real_instruction(0);
 	D_real_ins = "EMPTY";
 	E_real_ins = "EMPTY";
 	M_real_ins = "EMPTY";
@@ -170,6 +171,13 @@ void Print()
 	]\n" , W_stat , W_valE , W_valM , W_dstE , W_dstM);
 
 	printf("}\n");
+
+	cerr << "F_icode " << f_icode << endl;
+	cerr << "D_icode " << D_icode << endl;
+	cerr << "E_icode " << E_icode << endl;
+	cerr << "M_icode " << M_icode << endl;
+	cerr << "W_icode " << W_icode << endl;
+	cerr << endl;
 }
 
 void Proc()
@@ -183,8 +191,7 @@ void Proc()
 		Decode();
 		Fetch();
 		PipelineControlLogic();
-		if(st)
-			printf(",\n");
+		if(st)printf(",\n");
 		st = true;
 		Print();
 		Upload();
@@ -212,7 +219,10 @@ int main()
 	Read();
 	Init();
 
+	//Fetch();
 	printf("complete_data = [\n");
+	//Print();
+	//Upload();
 	Proc();
 	printf("]\n");
 

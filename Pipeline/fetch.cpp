@@ -143,6 +143,7 @@ void Instructionmemory()
 	}
 	cerr << "just read from addr. " << f_pc << endl;
 	f_real_ins = set_real_instruction(f_pc);
+	cerr << "real instruction : " << f_real_ins << endl;
 	f_icode = (memory[f_pc] >> 4) & 0xF;
 	f_ifun = memory[f_pc] & 0xF;
 
