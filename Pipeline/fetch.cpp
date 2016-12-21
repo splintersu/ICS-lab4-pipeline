@@ -141,6 +141,7 @@ void Instructionmemory()
 		f_ifun = FNONE;
 		return;
 	}
+	
 	f_icode = (memory[f_pc] >> 4) & 0xF;
 	f_ifun = memory[f_pc] & 0xF;
 
