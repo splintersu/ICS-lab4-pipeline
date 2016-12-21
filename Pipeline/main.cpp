@@ -47,6 +47,7 @@ void Init()
 
 void Print()
 {
+	cerr << "bubble_cnt : " << bubble_cnt << endl;
 	printf("{\n");
 	printf("	\"CONDITIONVALUE\" : {\"ZF\" : \"%d\" , SF : \"%d\" , OF : \"%d\"},\n"
 		, int(ZF) , int(SF) , int(OF));
@@ -114,6 +115,7 @@ void Print()
 */
 //	printf("	\"instructions\" : \"%d\" , \n" , instructions);
 //	printf("	\"CPI\" : \"%.3lf\" , \n" , CPI);
+	assert(bubble_cnt >= 0);
 	printf("	\"instructions\" : \"%d\" , \n" , clockcounter - bubble_cnt);
 	printf("	\"CPI\" : \"%.3lf\" , \n" , double(clockcounter) / (clockcounter - bubble_cnt));
 
