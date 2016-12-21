@@ -10,7 +10,7 @@
       #ControlPanel
       {
         position: absolute;
-        left:950px;
+        left:980px;
         top:270px;
       }
       #VariableList
@@ -25,9 +25,9 @@
       {
         position: absolute;
         left:250px;
-        top:270px;
+        top:300px;
         width:350px;
-        height:230px;
+        height:180px;
       }
       #Codeline1
       {
@@ -89,19 +89,19 @@
       #ConditionCode
       {
         position: absolute;
-        left:124px;
-        top:97px;
+        left:1050px;
+        top:100px;
       }
       #ShowClock
       {
         position: absolute;
-        left:120px;
+        left:100px;
         top:20px;
       }
       #TrafficLight
       {
         position: absolute;
-        left:1095px;
+        left:955px;
         top:265px;
       }
       .back
@@ -165,8 +165,44 @@
         position: absolute;
         max-height: 450px;
         left : 650px;
-        top : 270px;
+        top : 300px;
       }
+      #Instruction
+      {
+      	position: absolute;
+      	left : 100px;
+      	top : 106px;
+      }
+      #light1
+      {
+      	position: absolute;
+      	left : 235px;
+      	top : 25px;
+      }
+      #light2
+		{
+			position: absolute;
+			left : 235px;
+			top : 70px;
+		}
+		#light3
+		{
+			position: absolute;
+			left : 235px;
+			top : 115px;
+		}
+		#light4
+		{
+			position: absolute;
+			left : 235px;
+			top : 160px;
+		}
+		#light5
+		{
+			position: absolute;
+			left: 235px;
+			top : 205px;
+		}
     </style>
   </head>
 
@@ -393,11 +429,28 @@
           fontFamily : "Courier New"
         }; 
         return <div>
-          <div><span style={style1}>ZF</span>:<span style={style2}>{this.props.conditionvalue["ZF"]}</span></div>
-          <div><span style={style1}>SF</span>:<span style={style2}>{this.props.conditionvalue["SF"]}</span></div>
-          <div><span style={style1}>OF</span>:<span style={style2}>{this.props.conditionvalue["OF"]}</span></div>
+          <div><span style={style1}>ZF</span> : <span style={style2}>{this.props.conditionvalue["ZF"]}</span></div>
+          <div><span style={style1}>SF</span> : <span style={style2}>{this.props.conditionvalue["SF"]}</span></div>
+          <div><span style={style1}>OF</span> : <span style={style2}>{this.props.conditionvalue["OF"]}</span></div>
         </div>
       }
+    })
+
+    var MyInstruction = React.createClass({
+    	render : function(){
+	        var style1 = {
+	          fontFamily : "Courier New",
+	          fontSize : "16px"
+	        };
+	        var style2 = {
+	          fontSize : "16px",
+	          fontFamily : "Courier New"
+	        }; 
+	        return <div>
+				<div><span style={style1}>Instr</span> : <span style={style2}>{this.props.value["instructions"]}</span></div>
+				<div><span style={style1}>CPI</span> : <span style={style2}>{this.props.value["CPI"]}</span></div>
+	        </div>
+    	}
     })
 
     var MyShowClock = React.createClass({
@@ -438,7 +491,17 @@
       }
     })
 
-
+	var MyLight = React.createClass({
+		render : function(){
+			var mycolor = this.props.stat == "AOK" ? "green" :
+					this.props.stat == "ADR" ? "red" : 
+					this.props.stat == "INS" ? "red" :
+					this.props.stat == "HLT" ? "red" :
+					this.props.stat == "BUB" ? "blue" :
+					this.props.stat == "STA" ? "yellow" : "brown"
+			return <div><div style={{height : '8px' , width : '8px' , borderRadius : '4px' , backgroundColor : mycolor}}></div>{this.props.name}</div>
+		}
+	})
 
     var GlobalControler=React.createClass({
       getInitialState : function(){
@@ -580,6 +643,30 @@
           <div id="Memorytable">
             <MemoryTable memory={this.state.opt["MEMORY_TABLE"]} />
           </div>
+          <div id="Instruction">
+			<MyInstruction value={{"instructions" : this.state.opt["instructions"] , "CPI" : this.state.opt["CPI"]}} />
+          </div>
+
+		  <div id="light1">
+	          <MyLight stat={this.state.opt["FETCH"][0]["value"]} name="F"/>
+          </div>
+
+          <div id="light2">
+			  <MyLight stat={this.state.opt["DECODE"][0]["value"]} name="D"/>
+          </div>
+
+          <div id="light3">
+			  <MyLight stat={this.state.opt["EXECUTE"][0]["value"]} name="E"/>
+          </div>
+
+          <div id="light4">
+			  <MyLight stat={this.state.opt["MEMORY"][0]["value"]} name="M"/>
+          </div>
+
+          <div id="light5">
+			  <MyLight stat={this.state.opt["WRITE BACK"][0]["value"]} name="W"/>
+          </div>
+
         </div>
       }
     })
