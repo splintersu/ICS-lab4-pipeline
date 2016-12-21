@@ -203,6 +203,18 @@
 			left: 235px;
 			top : 205px;
 		}
+		#instructions_tag
+		{
+			position: absolute;
+			left: 400px;
+			top : 260px;
+		}
+		#memory_tag
+		{
+			position: absolute;
+			left:770px;
+			top: 260px;
+		}
     </style>
   </head>
 
@@ -666,6 +678,14 @@
           <div id="light5">
 			  <MyLight stat={this.state.opt["WRITE BACK"][0]["value"]} name="W"/>
           </div>
+
+		  <div id="instructions_tag">
+			  <span style={{fontSize : '25px' , fontFamily : 'Futura'}}>INSTRUCTIONS</span>
+		  </div>
+
+		  <div id="memory_tag">
+			  <span style={{fontSize : '25px' , fontFamily : 'Futura'}}>MEMORY</span>
+		  </div>
 
         </div>
       }
