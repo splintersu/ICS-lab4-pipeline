@@ -78,5 +78,5 @@ void Upload()
     }
     else if (!D_stall) SetD();
 
-    if (!F_stall){F_predPC = f_predPC;F_real_ins = f_real_ins;}
+    if (!F_stall) {F_predPC = f_predPC;F_real_ins = f_real_ins;}
 }

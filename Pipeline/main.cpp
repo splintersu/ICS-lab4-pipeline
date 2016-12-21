@@ -224,6 +224,10 @@ void Proc()
 		cerr << endl;
 		*/
 	}
+
+	for (int i=0; i<=memoryLength; i++)
+		cerr << memory[i] << ' ';
+	cerr << endl;
 	
 }
 
