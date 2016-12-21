@@ -469,9 +469,12 @@
       render : function(){
         var style1 = {fontFamily : "Courier New" , fontWeight : "bold" , fontSize : "20px"}
         var style2 = {fontFamily : "Courier New"}
+        var new_clock = this.props.clock
+        while(new_clock.length < 4)
+        	new_clock = "0" + new_clock
         return <div>
           <div style={style1}>CLOCK</div>
-          <div style={style2}>{this.props.clock}</div>
+          <div style={style2}>{new_clock}</div>
         </div>
       }
     })
@@ -703,6 +706,7 @@
       complete_data[i]["DECODE"][1]["value"] = reg_dict[complete_data[i]["DECODE"][1]["value"]]
       complete_data[i]["DECODE"][2]["value"] = reg_dict[complete_data[i]["DECODE"][2]["value"]]
 
+	  complete_data[i]["FETCH"][0]["value"] = state_dict[complete_data[i]["FETCH"][0]["value"]]
       complete_data[i]["DECODE"][0]["value"] = state_dict[complete_data[i]["DECODE"][0]["value"]]
       complete_data[i]["EXECUTE"][0]["value"] = state_dict[complete_data[i]["EXECUTE"][0]["value"]]
       complete_data[i]["MEMORY"][0]["value"] = state_dict[complete_data[i]["MEMORY"][0]["value"]]

@@ -1,7 +1,9 @@
 void PipelineControlLogic()
 {
     F_bubble = F_stall = false;
-    if ( (E_icode == IMRMOVL || E_icode == IPOPL) && (E_dstM == d_srcA || E_dstM == d_srcB) &&
+    if (E_icode == IJXX && !e_Cnd)
+        F_stall = true;
+    else if ( (E_icode == IMRMOVL || E_icode == IPOPL) && (E_dstM == d_srcA || E_dstM == d_srcB) &&
         !((D_icode == IRMMOVL || D_icode == IPUSHL) && E_dstM == d_srcA && E_dstM != d_srcB))
         F_stall = true;
     else if (IRET == D_icode ||

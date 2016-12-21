@@ -121,6 +121,10 @@ void Print()
 	,F_stall ? SSTA : SAOK ,  F_predPC , 0 , 0
 	);
 
+	cerr << "F_stall : " << F_stall << endl;
+	cerr << "D_bubble : " << D_bubble << endl;
+	cerr << "E_bubble : " << E_bubble << endl;
+
 /*
 	printf(
 "	\"DECODE\" : [\n\

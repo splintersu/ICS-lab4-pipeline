@@ -480,7 +480,7 @@ complete_data = [
 	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"stat" , "value":"1"},
+		{"key":"stat" , "value":"6"},
 		{"key":"predPC" , "value":"31"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"5"},
@@ -567,7 +567,7 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"32"}	],
+		{"key":"predPC" , "value":"31"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
