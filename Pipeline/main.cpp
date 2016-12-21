@@ -35,6 +35,8 @@ void Init()
 	D_stat = SAOK; D_icode = INOP; D_ifun = FNONE; D_rA = D_rB = RNONE;
 	F_predPC = 0;
 
+	esp = ebp = 500000;
+
 	F_real_ins = set_real_instruction(F_predPC);
 	D_real_ins = "EMPTY";
 	E_real_ins = "EMPTY";
@@ -191,11 +193,13 @@ void Proc()
 	while (W_stat == SAOK)
 	{
 		clockcounter ++;
+		instructions++;
 		Memory();
 		Execute();
 		Decode();
 		Fetch();
 		PipelineControlLogic();
+		CPI = double(clockcounter) / instructions;
 		if(st)printf(",\n");
 		st = true;
 		Print();

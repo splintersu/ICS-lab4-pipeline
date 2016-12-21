@@ -41,13 +41,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        0",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "1" , 
+	"CPI" : "1.000" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -127,13 +127,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        0",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "2" , 
+	"CPI" : "1.000" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -213,13 +213,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        0",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "3" , 
+	"CPI" : "1.000" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -299,13 +299,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        0",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "4" , 
+	"CPI" : "1.000" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -385,13 +385,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "5" , 
+	"CPI" : "1.000" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -471,13 +471,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "3" , 
+	"CPI" : "2.000" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"6"},
@@ -557,13 +557,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "4" , 
+	"CPI" : "1.750" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -643,13 +643,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "5" , 
+	"CPI" : "1.600" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -729,13 +729,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "6" , 
+	"CPI" : "1.500" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -815,13 +815,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        0",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "7" , 
+	"CPI" : "1.429" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -901,13 +901,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        2",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "8" , 
+	"CPI" : "1.375" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
@@ -987,13 +987,13 @@ complete_data = [
 		"ebx" : "        0",
 		"ecx" : "        3",
 		"edx" : "        2",
-		"ebp" : "        0",
-		"esp" : "        0",
+		"ebp" : "   500000",
+		"esp" : "   500000",
 		"esi" : "        0",
 		"edi" : "        0"
 	},
-	"instructions" : "0" , 
-	"CPI" : "0.000" , 
+	"instructions" : "8" , 
+	"CPI" : "1.500" , 
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},

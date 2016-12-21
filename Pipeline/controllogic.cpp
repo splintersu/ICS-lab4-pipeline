@@ -45,4 +45,16 @@ void PipelineControlLogic()
     cerr << M_stall << ' ' << M_bubble << endl;
     cerr << W_stall << ' ' << W_bubble << endl;
     cerr << endl;
+
+    instructions -= F_stall;
+    instructions -= F_bubble;
+    instructions -= D_stall;
+    instructions -= D_bubble;
+    instructions -= E_stall;
+    instructions -= E_bubble;
+    instructions -= M_stall;
+    instructions -= M_bubble;
+    instructions -= W_stall;
+    instructions -= W_bubble;
+    
 }
