@@ -56,5 +56,11 @@ void PipelineControlLogic()
     instructions -= M_bubble;
     instructions -= W_stall;
     instructions -= W_bubble;
+
+    bubble_cnt += F_bubble;
+    bubble_cnt += D_bubble;
+    bubble_cnt += E_bubble;
+    bubble_cnt += M_bubble;
+    bubble_cnt += W_bubble;
     
 }

@@ -34,6 +34,7 @@ void Init()
 	E_stat = SAOK; E_icode = INOP; E_ifun = FNONE;
 	D_stat = SAOK; D_icode = INOP; D_ifun = FNONE; D_rA = D_rB = RNONE;
 	F_predPC = 0;
+	clockcounter = 1;
 
 	esp = ebp = 500000;
 
@@ -111,8 +112,10 @@ void Print()
 	, F_predPC , 0 , 0
 	);
 */
-	printf("	\"instructions\" : \"%d\" , \n" , instructions);
-	printf("	\"CPI\" : \"%.3lf\" , \n" , CPI);
+//	printf("	\"instructions\" : \"%d\" , \n" , instructions);
+//	printf("	\"CPI\" : \"%.3lf\" , \n" , CPI);
+	printf("	\"instructions\" : \"%d\" , \n" , clockcounter - bubble_cnt);
+	printf("	\"CPI\" : \"%.3lf\" , \n" , double(clockcounter) / (clockcounter - bubble_cnt));
 
 	printf(
 "	\"FETCH\" :\n\

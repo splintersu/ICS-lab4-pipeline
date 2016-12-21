@@ -76,4 +76,5 @@ string f_real_ins , d_real_ins;
 
 int clockcounter;
 int instructions;
+int bubble_cnt;
 double CPI;

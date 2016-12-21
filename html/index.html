@@ -469,7 +469,7 @@
       render : function(){
         var style1 = {fontFamily : "Courier New" , fontWeight : "bold" , fontSize : "20px"}
         var style2 = {fontFamily : "Courier New"}
-        var new_clock = this.props.clock
+        var new_clock = this.props.clock + 1
         while(new_clock.length < 4)
         	new_clock = "0" + new_clock
         return <div>
