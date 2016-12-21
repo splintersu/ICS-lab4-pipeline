@@ -1,9 +1,9 @@
-irmovl 10000000 , %edx
-irmovl 1 , %eax
-xorl %ebx , %ebx
-jne target
-irmovl 10 , %ecx
-halt
+    irmovl 10000000 , %edx
+    irmovl 1 , %eax
+    xorl %ebx , %ebx
+    jne target
+    irmovl 10 , %ecx
+    halt
 target:
-rmmovl %eax , 0 ( %edx )
-halt
+    rmmovl %eax , 0 ( %edx )
+    halt
