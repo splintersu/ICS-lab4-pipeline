@@ -18,7 +18,7 @@ string get_register_name(int index)
 	if(index == 7)return "edi";
 }
 
-void set_real_instruction(int pc)
+string set_real_instruction(int pc)
 {
 	string res = "";
 	int icode = (memory[pc] >> 4) & 0xF;
@@ -50,7 +50,7 @@ void set_real_instruction(int pc)
 	}
 	if(icode == 5)
 	{
-		res = "mrmovl "+to_string(valC)+"("+get_register_name(rB)+","+
+		res = "mrmovl "+to_string(valC)+"("+get_register_name(rB)+"),"+
 		get_register_name(rA);
 	}
 	if(icode == 6)
@@ -67,6 +67,8 @@ void set_real_instruction(int pc)
 	}
 	if(icode == 7)
 	{
+		valC = memory[pc + 1] + (memory[pc + 2] << 8)
+	+ (memory[pc + 3] << 16) + (memory[pc + 4] << 24);
 		if(ifun == 0)
 			res = "jmp";
 		if(ifun == 1)
@@ -85,6 +87,8 @@ void set_real_instruction(int pc)
 	}
 	if(icode == 8)
 	{
+		valC = memory[pc + 1] + (memory[pc + 2] << 8)
+	+ (memory[pc + 3] << 16) + (memory[pc + 4] << 24);
 		res = "call " + to_string(valC);
 	}
 	if(icode == 9)
@@ -99,7 +103,7 @@ void set_real_instruction(int pc)
 	{
 		res = "popl " + get_register_name(rA);
 	}
-	real_instruction[clockcounter] = res;
+	return res;
 }
 
 void NeedValReg()
@@ -137,13 +141,13 @@ void Instructionmemory()
 		f_ifun = FNONE;
 		return;
 	}
-	set_real_instruction(f_pc);
+	cerr << "just read from addr. " << f_pc << endl;
+	f_real_ins = set_real_instruction(f_pc);
 	f_icode = (memory[f_pc] >> 4) & 0xF;
 	f_ifun = memory[f_pc] & 0xF;
 
 	NeedValReg();
 /* Set f_rA, f_rB, and f_valC */
-	cerr << "need: " << need_regids << endl;
 	if (need_regids)
 	{
 		f_rA = (memory[f_pc+1] >> 4) & 0xF;

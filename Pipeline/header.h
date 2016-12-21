@@ -34,6 +34,7 @@
 #define     SADR 		0x2
 #define     SINS 		0x3
 #define     SHLT 		0x4
+#define		SBUB 		0x5
 
 int stat;
 
@@ -67,5 +68,7 @@ bool ZF, SF, OF;
 
 bool F_stall, F_bubble, D_stall, D_bubble, E_stall, E_bubble, M_stall, M_bubble, W_stall, W_bubble;
 
+string F_real_ins , D_real_ins , E_real_ins , M_real_ins , W_real_ins;
+string f_real_ins;
+
 int clockcounter;
-string real_instruction[1000000];

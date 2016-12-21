@@ -579,13 +579,13 @@
       , "4" : "esp" , "5" : "ebp" , "6" : "esi" , "7" : "edi" , "15" : "R_none"
       , "R_NONE" : "R_none"}
 
-    var state_dict = {"1" : "SAOK" , "2" : "SADR" , "3" : "SINS" , "4" : "SHLT"
-      , "STAT_BUB" : "TEST"}
+    var state_dict = {"1" : "OK" , "2" : "ADR" , "3" : "INS" , "4" : "HLT"
+      , "5" : "BUB"}
 
     for(var i = 0 ; i < complete_data.length ; i++)
     {
-      complete_data[i]["DECODE"][3]["value"] = reg_dict[complete_data[i]["DECODE"][3]["value"]]
-      complete_data[i]["DECODE"][4]["value"] = reg_dict[complete_data[i]["DECODE"][4]["value"]]
+      complete_data[i]["DECODE"][1]["value"] = reg_dict[complete_data[i]["DECODE"][1]["value"]]
+      complete_data[i]["DECODE"][2]["value"] = reg_dict[complete_data[i]["DECODE"][2]["value"]]
 
       complete_data[i]["DECODE"][0]["value"] = state_dict[complete_data[i]["DECODE"][0]["value"]]
       complete_data[i]["EXECUTE"][0]["value"] = state_dict[complete_data[i]["EXECUTE"][0]["value"]]

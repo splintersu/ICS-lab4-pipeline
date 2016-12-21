@@ -1,3 +1,11 @@
+set<int> saved_addr;
+void add_memory_addr(int addr)
+{
+    if(saved_addr.find(addr) != saved_addr.end())
+        return;
+    saved_addr.insert(addr);
+}
+
 void Addr()
 {
     switch(M_icode)
@@ -40,6 +48,7 @@ void Datamemory()
             int tempdata = M_valA;
             for (int i=0; i<4; i++)
             {
+                add_memory_addr(mem_addr + i);
                 memory[mem_addr + i] = tempdata & 0xFF;
                 tempdata >>= 8;
             }
