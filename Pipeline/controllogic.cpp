@@ -33,6 +33,7 @@ void PipelineControlLogic()
     W_stall = W_bubble = false;
     if (W_stat == SADR || W_stat == SINS || W_stat == SHLT) W_stall = true;
 
+    cerr << "Condition: " << ' ' << E_icode << ' ' << e_Cnd << endl;
     cerr << D_icode << ' ' << D_ifun << endl;
     cerr << E_icode << ' ' << E_ifun << endl;
     cerr << "------------------------------\n";

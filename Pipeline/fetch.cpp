@@ -141,8 +141,6 @@ void Instructionmemory()
 		f_ifun = FNONE;
 		return;
 	}
-	cerr << "just read from addr. " << f_pc << endl;
-	f_real_ins = set_real_instruction(f_pc);
 	f_icode = (memory[f_pc] >> 4) & 0xF;
 	f_ifun = memory[f_pc] & 0xF;
 
@@ -192,6 +190,8 @@ void PredictPC()
 	if (f_icode == IJXX || f_icode == ICALL)
 		f_predPC = f_valC;
 	else f_predPC = f_valP;
+	cerr << "just read from addr. " << f_predPC << endl;
+	f_real_ins = set_real_instruction(f_predPC);
 }
 
 void Fetch()

@@ -53,6 +53,9 @@ void CC()
         SF = (e_valE < 0);
         OF = ((aluA < 0) == (aluB < 0) && (e_valE < 0) != (aluA < 0));
     }
+
+    cerr << "ALU: " << E_icode << ' ' << E_ifun << ' ' << aluA << ' ' << aluB << ' ' << e_valE << endl;
+    cerr << "ConditionCode: " << set_cc << ' ' << ZF << ' ' << SF << ' ' << OF << endl;
 }
 
 void Cond()
@@ -69,6 +72,7 @@ void Cond()
     else if (E_ifun == 0x4) e_Cnd = !ZF;            //jne
     else if (E_ifun == 0x5) e_Cnd = (!SF) || ZF;    //jge
     else if (E_ifun == 0x6) e_Cnd = !SF;            //jg 
+    cerr << "CheckE_Cnd : " << e_Cnd << endl;
     /*
         to be finished.
     */
