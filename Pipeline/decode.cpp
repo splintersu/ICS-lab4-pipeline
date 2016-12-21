@@ -21,7 +21,7 @@ void DecodeProc()
 
     switch(D_icode)
     {
-        case IRRMOVL: case IIRMOVL: case IOPL: case ITESTL: case ICMPL:
+        case IRRMOVL: case IIRMOVL: case IOPL:
             d_dstE = D_rB; break;
         case IPUSHL: case IPOPL: case ICALL: case IRET:
             d_dstE = RESP; break;
