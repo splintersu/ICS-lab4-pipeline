@@ -103,6 +103,14 @@ string set_real_instruction(int pc)
 	{
 		res = "popl " + get_register_name(rA);
 	}
+	if (icode == 12)
+	{
+		res = "testl " + get_register_name(rA) + "," + get_register_name(rB);
+	}
+	if (icode == 13)
+	{
+		res = "cmpl " + get_register_name(rA) + "," + get_register_name(rB);
+	}
 	return res;
 }
 
@@ -113,8 +121,8 @@ void NeedValReg()
 	switch(f_icode)
 	{
 		case IRRMOVL: case IOPL: case IPUSHL: case IPOPL:
-		case IIRMOVL: case IRMMOVL: case IMRMOVL:
-		need_regids = true; break;
+		case IIRMOVL: case IRMMOVL: case IMRMOVL: case ITESTL:
+			need_regids = true; break;
 		default: need_regids = false;
 	}
 
@@ -122,7 +130,7 @@ void NeedValReg()
 	{
 		case IIRMOVL: case IRMMOVL: case IMRMOVL:
 		case IJXX: case ICALL:
-		need_valC = true; break;
+			need_valC = true; break;
 		default: need_valC = false;
 	}
 }
@@ -144,6 +152,8 @@ void Instructionmemory()
 	
 	f_icode = (memory[f_pc] >> 4) & 0xF;
 	f_ifun = memory[f_pc] & 0xF;
+
+    d_real_ins = set_real_instruction(f_pc);
 
 	NeedValReg();
 /* Set f_rA, f_rB, and f_valC */
@@ -167,8 +177,8 @@ void Instrvalid()
 	{
 		case INOP: case IHALT: case IRRMOVL: case IIRMOVL:
 		case IRMMOVL: case IMRMOVL: case IOPL: case IJXX:
-		case ICALL: case IRET: case IPUSHL: case IPOPL:
-		instr_valid = true; break;
+		case ICALL: case IRET: case IPUSHL: case IPOPL: case ITESTL:
+			instr_valid = true; break;
 		default: instr_valid = false;
 	}
 }

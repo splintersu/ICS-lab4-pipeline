@@ -1,9 +1,7 @@
     irmovl 10000000 , %edx
     irmovl 1 , %eax
-    xorl %ebx , %ebx
-    jne target
-    irmovl 10 , %ecx
-    halt
+    subl %eax , %edx
+    jl target
+    irmovl 2 , %ecx
 target:
-    rmmovl %eax , 0 ( %edx )
     halt

@@ -256,7 +256,7 @@ int main(int argc , char *argv[])
 			pos += 2;
 			continue;
 		}
-		if(now == "addl" || now == "subl" || now == "andl" || now == "xorl")
+		if(now == "addl" || now == "subl" || now == "andl" || now == "xorl" || now == "itestl" || now == "icmpl")
 		{
 			if(now == "addl")
 				buffer[pos] = Bichar('6' , '0');
@@ -266,6 +266,10 @@ int main(int argc , char *argv[])
 				buffer[pos] = Bichar('6' , '2');
 			if(now == "xorl")
 				buffer[pos] = Bichar('6' , '3');
+			if (now == "itestl")
+				buffer[pos] = Bichar('C', '0');
+			if (now == "icmpl")
+				buffer[pos] = Bichar('D', '0');
 			int rA , rB;string reg1 , reg2 , comma;
 			cin >> reg1 >> comma >> reg2;
 			if(comma != ",")

@@ -2,7 +2,7 @@ void PreALU()
 {
     switch(E_icode)
     {
-        case IRRMOVL: case IOPL:
+        case IRRMOVL: case IOPL: case ITESTL: case ICMPL:
             aluA = E_valA; break;
         case IIRMOVL: case IRMMOVL: case IMRMOVL:
             aluA = E_valC; break;
@@ -14,7 +14,8 @@ void PreALU()
 
     switch(E_icode)
     {
-        case IRMMOVL: case IMRMOVL: case IOPL: case ICALL:
+        case IRMMOVL: case IMRMOVL: case IOPL:
+        case ICALL: case ITESTL: case ICMPL:
         case IPUSHL: case IRET: case IPOPL:
             aluB = E_valB; break;
         case IRRMOVL: case IIRMOVL:
@@ -24,6 +25,8 @@ void PreALU()
     switch(E_icode)
     {
         case IOPL: alufun = E_ifun; break;
+        case ITESTL: alufun = ALUADD; break;
+        case ICMPL: alufun  = ALUSUB; break;
         default: alufun = ALUADD;
     }
 }
@@ -33,7 +36,7 @@ void ALU()
     switch(alufun)
     {
         case ALUADD: e_valE = aluA + aluB; break;
-        case ALUSUB: e_valE = aluA - aluB; break;
+        case ALUSUB: e_valE = aluB - aluA; break;
         case ALUAND: e_valE = aluA & aluB; break;
         case ALUXOR: e_valE = aluA ^ aluB; break;
     }
@@ -41,7 +44,7 @@ void ALU()
 
 void CC()
 {
-    if ((E_icode == IOPL) &&
+    if ((E_icode == IOPL || E_icode == ITESTL || E_icode == ICMPL) &&
         (m_stat != SADR && m_stat != SINS && m_stat != SHLT) &&
         (W_stat != SADR && W_stat != SINS && W_stat != SHLT))
         set_cc = true;

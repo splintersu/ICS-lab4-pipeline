@@ -10,6 +10,8 @@
 #define     IRET 		0x9
 #define     IPUSHL 		0xA
 #define     IPOPL 		0xB
+#define     ITESTL      0xC
+#define     ICMPL       0xD
 
 #define     FNONE 		0x0
 
@@ -70,7 +72,7 @@ bool ZF, SF, OF;
 bool F_stall, F_bubble, D_stall, D_bubble, E_stall, E_bubble, M_stall, M_bubble, W_stall, W_bubble;
 
 string F_real_ins , D_real_ins , E_real_ins , M_real_ins , W_real_ins;
-string f_real_ins;
+string f_real_ins , d_real_ins;
 
 int clockcounter;
 int instructions;

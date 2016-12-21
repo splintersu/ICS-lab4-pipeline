@@ -45,7 +45,7 @@ void SetD()
     D_rB = f_rB;
     D_valC = f_valC;
     D_valP =  f_valP;
-    D_real_ins = F_real_ins;
+    D_real_ins = d_real_ins;
 }
 
 void Upload()

@@ -2,7 +2,7 @@ void DecodeProc()
 {
     switch(D_icode)
     {
-        case IRRMOVL: case IRMMOVL: case IOPL: case IPUSHL:
+        case IRRMOVL: case IRMMOVL: case IOPL: case IPUSHL: case ITESTL: case ICMPL:
             d_srcA = D_rA; break;
         case IPOPL: case IRET:
             d_srcA = RESP; break;
@@ -11,7 +11,7 @@ void DecodeProc()
 
     switch(D_icode)
     {
-        case IOPL: case IRMMOVL: case IMRMOVL:
+        case IOPL: case IRMMOVL: case IMRMOVL: case ITESTL: case ICMPL:
             d_srcB = D_rB; break;
         case IPUSHL: case IPOPL: case ICALL: case IRET:
             d_srcB = RESP; break;
@@ -20,7 +20,7 @@ void DecodeProc()
 
     switch(D_icode)
     {
-        case IRRMOVL: case IIRMOVL: case IOPL:
+        case IRRMOVL: case IIRMOVL: case IOPL: case ITESTL: case ICMPL:
             d_dstE = D_rB; break;
         case IPUSHL: case IPOPL: case ICALL: case IRET:
             d_dstE = RESP; break;
