@@ -109,14 +109,16 @@ void Print()
 	, F_predPC , 0 , 0
 	);
 */
+	printf("	\"instructions\" : \"%d\" , \n" , instructions);
+	printf("	\"CPI\" : \"%.3lf\" , \n" , CPI);
+
 	printf(
 "	\"FETCH\" :\n\
 	[\n\
-		{\"key\":\"predPC\" , \"value\":\"%d\"},\n\
-		{\"key\":\"instructions\" , \"value\":%d},\n\
-		{\"key\":\"CPI\" , \"value\":%d}\n\
+		{\"key\":\"stat\" , \"value\":\"%d\"},\n\
+		{\"key\":\"predPC\" , \"value\":\"%d\"}
 	],\n" 
-	, F_predPC , 0 , 0
+	,F_stall ? SSTA : SAOK ,  F_predPC , 0 , 0
 	);
 
 /*
@@ -136,7 +138,7 @@ void Print()
 		{\"key\":\"rB\" , \"value\":\"%d\"},\n\
 		{\"key\":\"valC\" , \"value\":\"%d\"},\n\
 		{\"key\":\"valP\" , \"value\":\"%d\"}\n\
-	],\n" , D_stat , D_rA, D_rB, D_valC , D_valP);
+	],\n" , D_stall ? SSTA : D_bubble ? SBUB : D_stat , D_rA, D_rB, D_valC , D_valP);
 
 	printf(
 "	\"EXECUTE\" : [\n\
@@ -148,7 +150,7 @@ void Print()
 		{\"key\":\"dstM\" , \"value\":%d},\n\
 		{\"key\":\"srcA\" , \"value\":%d},\n\
 		{\"key\":\"srcB\" , \"value\":%d}\n\
-	],\n" , E_stat , E_valC , E_valA , E_valB , E_dstE , E_dstM , E_srcA , E_srcB);
+	],\n" , E_stall ? SSTA : E_bubble ? SBUB : E_stat , E_valC , E_valA , E_valB , E_dstE , E_dstM , E_srcA , E_srcB);
 
 
 	printf(
@@ -158,7 +160,7 @@ void Print()
 		{\"key\":\"valA\" , \"value\":%d},\n\
 		{\"key\":\"dstE\" , \"value\":%d},\n\
 		{\"key\":\"dstM\" , \"value\":%d}\n\
-	],\n" , M_stat , M_valE , M_valA , M_dstE , M_dstM);
+	],\n" , M_stall ? SSTA : M_bubble ? SBUB : M_stat , M_valE , M_valA , M_dstE , M_dstM);
 
 	printf(
 "	\"WRITE BACK\" : [\n\
@@ -167,7 +169,7 @@ void Print()
 		{\"key\":\"valM\" , \"value\":%d},\n\
 		{\"key\":\"dstE\" , \"value\":%d},\n\
 		{\"key\":\"dstM\" , \"value\":%d},\n\
-	]\n" , W_stat , W_valE , W_valM , W_dstE , W_dstM);
+	]\n" , W_stall ? SSTA : W_bubble ? SBUB : W_stat , W_valE , W_valM , W_dstE , W_dstM);
 
 	printf("}\n");
 

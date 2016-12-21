@@ -413,7 +413,7 @@
 
     var MyTrafficLight = React.createClass({
       render : function(){
-        var style1 = {width : "7px" , height : "230px" , background : this.props.trafficlight , borderRadius : "5px" , opacity : '0.5'}
+        var style1 = {width : "7px" , height : "230px" , background : this.props.trafficlight , borderRadius : "5px" , opacity : '0.8'}
         return <div style={style1}></div>
       }
     })
@@ -451,10 +451,17 @@
         }
       },
       flashred : function(){
-        this.setState({trafficlight : "#000000"})
+        this.setState({trafficlight : "red"})
         var that = this
         var flipback = function()
-          {that.setState({trafficlight : "#9d9d9d"})}
+          {that.setState({trafficlight : "#9d9d9d"})} //#9d9d9d
+        setTimeout(flipback , 400)
+      },
+      flashgreen : function(){
+        this.setState({trafficlight : "#00ec00"})
+        var that = this
+        var flipback = function()
+          {that.setState({trafficlight : "#9d9d9d"})} //#9d9d9d
         setTimeout(flipback , 400)
       },
       addonesec : function(){
@@ -462,6 +469,7 @@
           this.flashred()
         else
         {
+          this.flashgreen()
           this.setState({clock : this.state.clock + 1 , opt : complete_data[this.state.clock + 1]})
         }
       },
@@ -508,6 +516,7 @@
           this.flashred()
         else
         {
+          this.flashgreen();
           this.setState({clock : this.state.clock - 1 , opt : complete_data[this.state.clock - 1]})
         }
       },
@@ -579,8 +588,8 @@
       , "4" : "esp" , "5" : "ebp" , "6" : "esi" , "7" : "edi" , "15" : "R_none"
       , "R_NONE" : "R_none"}
 
-    var state_dict = {"1" : "OK" , "2" : "ADR" , "3" : "INS" , "4" : "HLT"
-      , "5" : "BUB"}
+    var state_dict = {"1" : "AOK" , "2" : "ADR" , "3" : "INS" , "4" : "HLT"
+      , "5" : "BUB" , "6" : "STA"}
 
     for(var i = 0 ; i < complete_data.length ; i++)
     {

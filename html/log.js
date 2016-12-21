@@ -42,6 +42,8 @@ complete_data = [
 		{"addr" : "37" , "val" : "016|0x10"},
 		{"addr" : "38" , "val" : "000|0x00"}],
 "CODE" : ["irmovl 10000000,edx" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
+	"instructions" : "4" ,
+	"CPI" : "3",
 	"REGVALUE" : 
 	{
 		"eax" : "        0",
@@ -55,9 +57,8 @@ complete_data = [
 	},
 	"FETCH" :
 	[
+		{"key" : "stat" , "value" : "0"},
 		{"key":"predPC" , "value":"0"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
 	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},

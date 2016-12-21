@@ -35,6 +35,7 @@
 #define     SINS 		0x3
 #define     SHLT 		0x4
 #define		SBUB 		0x5
+#define		SSTA		0x6
 
 int stat;
 
@@ -72,3 +73,5 @@ string F_real_ins , D_real_ins , E_real_ins , M_real_ins , W_real_ins;
 string f_real_ins;
 
 int clockcounter;
+int instructions;
+double CPI;
