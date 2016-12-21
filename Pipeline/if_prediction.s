@@ -1,4 +1,4 @@
-irmovl 10 , %ebx
+irmovl 100 , %ebx
 irmovl 1 , %ecx
 st:
 addl %ecx , %eax

@@ -508,7 +508,7 @@
 
 	var MyLight = React.createClass({
 		render : function(){
-			var mycolor = this.props.stat == "AOK" ? "green" :
+			var mycolor = this.props.stat == "AOK" ? "#00ec00" :
 					this.props.stat == "ADR" ? "red" : 
 					this.props.stat == "INS" ? "red" :
 					this.props.stat == "HLT" ? "red" :
@@ -576,6 +576,19 @@
             }
             this.addonesec()
           }.bind(this) , 200)
+        }
+        else if(this.state.run_speed == 200)
+        {
+          this.setState({run_speed : 50})
+          clearInterval(this.gogogo)
+          this.gogogo = setInterval(function(){
+          	if(this.state.clock + 1 == complete_data.length)
+          	{
+          	  this.setState({run_speed : -1})
+          	  clearInterval(this.gogogo)
+          	}
+          	this.addonesec()
+          }.bind(this) , 50)
         }
       },
       stop : function(){
