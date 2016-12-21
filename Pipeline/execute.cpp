@@ -25,10 +25,11 @@ void PreALU()
     switch(E_icode)
     {
         case IOPL: alufun = E_ifun; break;
-        case ITESTL: alufun = ALUADD; break;
+        case ITESTL: alufun = ALUAND; break;
         case ICMPL: alufun  = ALUSUB; break;
         default: alufun = ALUADD;
     }
+    cerr  << ' ' << aluA << ' ' << aluB << endl;
 }
 
 void ALU()
@@ -57,12 +58,13 @@ void CC()
         OF = ((aluA < 0) == (aluB < 0) && (e_valE < 0) != (aluA < 0));
     }
 
-    cerr << "ALU: " << E_icode << ' ' << E_ifun << ' ' << aluA << ' ' << aluB << ' ' << e_valE << endl;
+    cerr << "ALU: " << E_icode << ' ' << E_ifun << ' ' << alufun << ' ' << aluA << ' ' << aluB << ' ' << e_valE << endl;
     cerr << "ConditionCode: " << set_cc << ' ' << ZF << ' ' << SF << ' ' << OF << endl;
 }
 
 void Cond()
 {
+    cerr << "Cond: " << E_icode << ' ' << ZF << ' ' << SF << ' ' << OF << endl;
     if (E_icode != IJXX)
     {
         e_Cnd = true;

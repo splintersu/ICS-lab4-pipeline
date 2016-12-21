@@ -29,8 +29,6 @@ complete_data = [
 		{"addr" : "24" , "val" : "000|0x00"},
 		{"addr" : "25" , "val" : "000|0x00"}],
 "CODE" : ["irmovl 10000000,edx" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
-	"instructions" : "4" ,
-	"CPI" : "3",
 	"REGVALUE" : 
 	{
 		"eax" : "        0",
@@ -42,11 +40,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key" : "stat" , "value" : "0"},
-		{"key":"predPC" , "value":"0"},
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"0"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
@@ -121,12 +120,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"6"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"6"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
@@ -201,12 +200,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"12"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"12"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
@@ -281,12 +280,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"14"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"14"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"0"},
@@ -361,12 +360,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"25"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"25"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
@@ -441,21 +440,21 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"26"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"26"}	],
 	"DECODE" : [
-		{"key":"stat" , "value":"4"},
+		{"key":"stat" , "value":"5"},
 		{"key":"rA" , "value":"15"},
 		{"key":"rB" , "value":"15"},
 		{"key":"valC" , "value":"0"},
 		{"key":"valP" , "value":"26"}
 	],
 	"EXECUTE" : [
-		{"key":"stat" , "value":"1"},
+		{"key":"stat" , "value":"5"},
 		{"key":"valC" , "value":25},
 		{"key":"valA" , "value":19},
 		{"key":"valB" , "value":0},
@@ -521,12 +520,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"27"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"27"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
@@ -601,12 +600,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"25"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"25"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
@@ -681,12 +680,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"26"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"26"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"4"},
 		{"key":"rA" , "value":"15"},
@@ -761,12 +760,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"27"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"27"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"2"},
 		{"key":"rA" , "value":"15"},
@@ -841,12 +840,12 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"instructions" : "0" , 
+	"CPI" : "0.000" , 
 	"FETCH" :
 	[
-		{"key":"predPC" , "value":"28"},
-		{"key":"instructions" , "value":0},
-		{"key":"CPI" , "value":0}
-	],
+		{"key":"stat" , "value":"1"},
+		{"key":"predPC" , "value":"28"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"2"},
 		{"key":"rA" , "value":"15"},
@@ -865,7 +864,7 @@ complete_data = [
 		{"key":"srcB" , "value":15}
 	],
 	"MEMORY" : [
-		{"key":"stat" , "value":"4"},
+		{"key":"stat" , "value":"5"},
 		{"key":"valE" , "value":2},
 		{"key":"valA" , "value":0},
 		{"key":"dstE" , "value":15},

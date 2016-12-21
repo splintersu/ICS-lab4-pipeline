@@ -121,7 +121,7 @@ void NeedValReg()
 	switch(f_icode)
 	{
 		case IRRMOVL: case IOPL: case IPUSHL: case IPOPL:
-		case IIRMOVL: case IRMMOVL: case IMRMOVL: case ITESTL:
+		case IIRMOVL: case IRMMOVL: case IMRMOVL: case ITESTL: case ICMPL:
 			need_regids = true; break;
 		default: need_regids = false;
 	}
@@ -177,7 +177,7 @@ void Instrvalid()
 	{
 		case INOP: case IHALT: case IRRMOVL: case IIRMOVL:
 		case IRMMOVL: case IMRMOVL: case IOPL: case IJXX:
-		case ICALL: case IRET: case IPUSHL: case IPOPL: case ITESTL:
+		case ICALL: case IRET: case IPUSHL: case IPOPL: case ITESTL: case ICMPL:
 			instr_valid = true; break;
 		default: instr_valid = false;
 	}

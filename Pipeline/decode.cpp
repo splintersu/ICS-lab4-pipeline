@@ -2,7 +2,8 @@ void DecodeProc()
 {
     switch(D_icode)
     {
-        case IRRMOVL: case IRMMOVL: case IOPL: case IPUSHL: case ITESTL: case ICMPL:
+        case IRRMOVL: case IRMMOVL: case IOPL: case IPUSHL:
+        case ITESTL: case ICMPL:
             d_srcA = D_rA; break;
         case IPOPL: case IRET:
             d_srcA = RESP; break;
@@ -33,6 +34,7 @@ void DecodeProc()
             d_dstM = D_rA; break;
         default: d_dstM = RNONE;
     }
+    cerr << "Decode: " << D_icode << ' ' << D_rA << ' ' << D_rB << endl;
 }
 
 void Registerwrite(int type, int val)

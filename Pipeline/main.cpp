@@ -116,7 +116,7 @@ void Print()
 "	\"FETCH\" :\n\
 	[\n\
 		{\"key\":\"stat\" , \"value\":\"%d\"},\n\
-		{\"key\":\"predPC\" , \"value\":\"%d\"}
+		{\"key\":\"predPC\" , \"value\":\"%d\"}\
 	],\n" 
 	,F_stall ? SSTA : SAOK ,  F_predPC , 0 , 0
 	);
