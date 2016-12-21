@@ -47,6 +47,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "2" , 
 	"instructions" : "2" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
@@ -134,6 +135,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "3" , 
 	"instructions" : "3" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
@@ -221,6 +223,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "4" , 
 	"instructions" : "4" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
@@ -308,6 +311,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "5" , 
 	"instructions" : "5" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
@@ -395,6 +399,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "6" , 
 	"instructions" : "6" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
@@ -482,6 +487,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "7" , 
 	"instructions" : "7" , 
 	"CPI" : "1.000" , 
 	"FETCH" :
@@ -569,6 +575,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "8" , 
 	"instructions" : "6" , 
 	"CPI" : "1.333" , 
 	"FETCH" :
@@ -656,6 +663,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "9" , 
 	"instructions" : "7" , 
 	"CPI" : "1.286" , 
 	"FETCH" :
@@ -743,6 +751,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "10" , 
 	"instructions" : "8" , 
 	"CPI" : "1.250" , 
 	"FETCH" :
@@ -830,6 +839,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "11" , 
 	"instructions" : "9" , 
 	"CPI" : "1.222" , 
 	"FETCH" :
@@ -917,6 +927,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "12" , 
 	"instructions" : "10" , 
 	"CPI" : "1.200" , 
 	"FETCH" :
@@ -1004,6 +1015,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "13" , 
 	"instructions" : "11" , 
 	"CPI" : "1.182" , 
 	"FETCH" :
@@ -1091,6 +1103,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "14" , 
 	"instructions" : "10" , 
 	"CPI" : "1.400" , 
 	"FETCH" :
@@ -1178,6 +1191,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "15" , 
 	"instructions" : "11" , 
 	"CPI" : "1.364" , 
 	"FETCH" :
@@ -1265,6 +1279,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "16" , 
 	"instructions" : "12" , 
 	"CPI" : "1.333" , 
 	"FETCH" :
@@ -1352,6 +1367,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "17" , 
 	"instructions" : "13" , 
 	"CPI" : "1.308" , 
 	"FETCH" :
@@ -1439,6 +1455,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "18" , 
 	"instructions" : "14" , 
 	"CPI" : "1.286" , 
 	"FETCH" :
@@ -1526,6 +1543,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "19" , 
 	"instructions" : "15" , 
 	"CPI" : "1.267" , 
 	"FETCH" :
@@ -1613,6 +1631,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "20" , 
 	"instructions" : "14" , 
 	"CPI" : "1.429" , 
 	"FETCH" :
@@ -1700,6 +1719,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "21" , 
 	"instructions" : "15" , 
 	"CPI" : "1.400" , 
 	"FETCH" :
@@ -1787,6 +1807,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "22" , 
 	"instructions" : "16" , 
 	"CPI" : "1.375" , 
 	"FETCH" :
@@ -1874,6 +1895,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "23" , 
 	"instructions" : "17" , 
 	"CPI" : "1.353" , 
 	"FETCH" :
@@ -1961,6 +1983,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "24" , 
 	"instructions" : "18" , 
 	"CPI" : "1.333" , 
 	"FETCH" :
@@ -2048,6 +2071,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "25" , 
 	"instructions" : "19" , 
 	"CPI" : "1.316" , 
 	"FETCH" :
@@ -2135,6 +2159,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "26" , 
 	"instructions" : "18" , 
 	"CPI" : "1.444" , 
 	"FETCH" :
@@ -2222,6 +2247,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "27" , 
 	"instructions" : "19" , 
 	"CPI" : "1.421" , 
 	"FETCH" :
@@ -2309,6 +2335,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "28" , 
 	"instructions" : "20" , 
 	"CPI" : "1.400" , 
 	"FETCH" :
@@ -2396,6 +2423,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "29" , 
 	"instructions" : "21" , 
 	"CPI" : "1.381" , 
 	"FETCH" :
@@ -2483,6 +2511,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "30" , 
 	"instructions" : "22" , 
 	"CPI" : "1.364" , 
 	"FETCH" :
@@ -2570,6 +2599,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "31" , 
 	"instructions" : "23" , 
 	"CPI" : "1.348" , 
 	"FETCH" :
@@ -2657,6 +2687,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "32" , 
 	"instructions" : "22" , 
 	"CPI" : "1.455" , 
 	"FETCH" :
@@ -2744,6 +2775,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "33" , 
 	"instructions" : "23" , 
 	"CPI" : "1.435" , 
 	"FETCH" :
@@ -2831,6 +2863,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "34" , 
 	"instructions" : "24" , 
 	"CPI" : "1.417" , 
 	"FETCH" :
@@ -2918,6 +2951,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "35" , 
 	"instructions" : "25" , 
 	"CPI" : "1.400" , 
 	"FETCH" :
@@ -3005,6 +3039,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "36" , 
 	"instructions" : "26" , 
 	"CPI" : "1.385" , 
 	"FETCH" :
@@ -3092,6 +3127,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "37" , 
 	"instructions" : "27" , 
 	"CPI" : "1.370" , 
 	"FETCH" :
@@ -3179,6 +3215,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "38" , 
 	"instructions" : "26" , 
 	"CPI" : "1.462" , 
 	"FETCH" :
@@ -3266,6 +3303,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "39" , 
 	"instructions" : "27" , 
 	"CPI" : "1.444" , 
 	"FETCH" :
@@ -3353,6 +3391,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "40" , 
 	"instructions" : "28" , 
 	"CPI" : "1.429" , 
 	"FETCH" :
@@ -3440,6 +3479,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "41" , 
 	"instructions" : "29" , 
 	"CPI" : "1.414" , 
 	"FETCH" :
@@ -3527,6 +3567,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "42" , 
 	"instructions" : "30" , 
 	"CPI" : "1.400" , 
 	"FETCH" :
@@ -3614,6 +3655,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "43" , 
 	"instructions" : "31" , 
 	"CPI" : "1.387" , 
 	"FETCH" :
@@ -3701,6 +3743,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "44" , 
 	"instructions" : "30" , 
 	"CPI" : "1.467" , 
 	"FETCH" :
@@ -3788,6 +3831,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "45" , 
 	"instructions" : "31" , 
 	"CPI" : "1.452" , 
 	"FETCH" :
@@ -3875,6 +3919,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "46" , 
 	"instructions" : "32" , 
 	"CPI" : "1.438" , 
 	"FETCH" :
@@ -3962,6 +4007,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "47" , 
 	"instructions" : "33" , 
 	"CPI" : "1.424" , 
 	"FETCH" :
@@ -4049,6 +4095,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "48" , 
 	"instructions" : "34" , 
 	"CPI" : "1.412" , 
 	"FETCH" :
@@ -4136,6 +4183,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "49" , 
 	"instructions" : "35" , 
 	"CPI" : "1.400" , 
 	"FETCH" :
@@ -4223,6 +4271,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "50" , 
 	"instructions" : "34" , 
 	"CPI" : "1.471" , 
 	"FETCH" :
@@ -4310,6 +4359,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "51" , 
 	"instructions" : "35" , 
 	"CPI" : "1.457" , 
 	"FETCH" :
@@ -4397,6 +4447,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "52" , 
 	"instructions" : "36" , 
 	"CPI" : "1.444" , 
 	"FETCH" :
@@ -4484,6 +4535,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "53" , 
 	"instructions" : "37" , 
 	"CPI" : "1.432" , 
 	"FETCH" :
@@ -4571,6 +4623,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "54" , 
 	"instructions" : "38" , 
 	"CPI" : "1.421" , 
 	"FETCH" :
@@ -4658,6 +4711,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "55" , 
 	"instructions" : "39" , 
 	"CPI" : "1.410" , 
 	"FETCH" :
@@ -4745,6 +4799,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "56" , 
 	"instructions" : "38" , 
 	"CPI" : "1.474" , 
 	"FETCH" :
@@ -4832,6 +4887,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "57" , 
 	"instructions" : "39" , 
 	"CPI" : "1.462" , 
 	"FETCH" :
@@ -4919,6 +4975,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "58" , 
 	"instructions" : "40" , 
 	"CPI" : "1.450" , 
 	"FETCH" :
@@ -5006,6 +5063,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "59" , 
 	"instructions" : "41" , 
 	"CPI" : "1.439" , 
 	"FETCH" :
@@ -5093,6 +5151,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "60" , 
 	"instructions" : "42" , 
 	"CPI" : "1.429" , 
 	"FETCH" :
@@ -5180,6 +5239,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "61" , 
 	"instructions" : "43" , 
 	"CPI" : "1.419" , 
 	"FETCH" :
@@ -5267,6 +5327,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "62" , 
 	"instructions" : "42" , 
 	"CPI" : "1.476" , 
 	"FETCH" :
@@ -5354,6 +5415,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "63" , 
 	"instructions" : "43" , 
 	"CPI" : "1.465" , 
 	"FETCH" :
@@ -5441,6 +5503,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "64" , 
 	"instructions" : "44" , 
 	"CPI" : "1.455" , 
 	"FETCH" :
@@ -5528,6 +5591,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "65" , 
 	"instructions" : "45" , 
 	"CPI" : "1.444" , 
 	"FETCH" :
@@ -5615,6 +5679,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "66" , 
 	"instructions" : "46" , 
 	"CPI" : "1.435" , 
 	"FETCH" :
@@ -5702,6 +5767,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "67" , 
 	"instructions" : "47" , 
 	"CPI" : "1.426" , 
 	"FETCH" :
@@ -5789,6 +5855,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "68" , 
 	"instructions" : "48" , 
 	"CPI" : "1.417" , 
 	"FETCH" :
@@ -5876,6 +5943,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "69" , 
 	"instructions" : "49" , 
 	"CPI" : "1.408" , 
 	"FETCH" :
@@ -5963,6 +6031,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "        0"
 	},
+	"clockcounter" : "70" , 
 	"instructions" : "50" , 
 	"CPI" : "1.400" , 
 	"FETCH" :
@@ -6050,6 +6119,7 @@ complete_data = [
 		"esi" : "        0",
 		"edi" : "   123456"
 	},
+	"clockcounter" : "71" , 
 	"instructions" : "50" , 
 	"CPI" : "1.420" , 
 	"FETCH" :
