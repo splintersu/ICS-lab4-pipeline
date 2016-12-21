@@ -5,3 +5,4 @@
     irmovl 2 , %ecx
 target:
     irmovl 3 , %ecx
+    halt

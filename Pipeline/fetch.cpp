@@ -147,6 +147,7 @@ void Instructionmemory()
 	{
 		f_icode = INOP;
 		f_ifun = FNONE;
+		f_real_ins = "nop";
 		return;
 	}
 	

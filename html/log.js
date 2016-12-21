@@ -32,7 +32,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["irmovl 2,edx" , "EMPTY" , "EMPTY" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
@@ -117,7 +118,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["irmovl 1,eax" , "irmovl 2,edx" , "EMPTY" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
@@ -202,7 +204,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["cmpl eax,edx" , "irmovl 1,eax" , "irmovl 2,edx" , "EMPTY" , "EMPTY"],
 	"REGVALUE" : 
 	{
@@ -287,7 +290,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["je 25" , "cmpl eax,edx" , "irmovl 1,eax" , "irmovl 2,edx" , "EMPTY"],
 	"REGVALUE" : 
 	{
@@ -372,7 +376,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["irmovl 3,ecx" , "je 25" , "cmpl eax,edx" , "irmovl 1,eax" , "irmovl 2,edx"],
 	"REGVALUE" : 
 	{
@@ -457,7 +462,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "irmovl 3,ecx" , "je 25" , "cmpl eax,edx" , "irmovl 1,eax"],
 	"REGVALUE" : 
 	{
@@ -542,7 +548,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "nop" , "nop" , "je 25" , "cmpl eax,edx"],
 	"REGVALUE" : 
 	{
@@ -560,7 +567,7 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"37"}	],
+		{"key":"predPC" , "value":"32"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"1"},
 		{"key":"rA" , "value":"15"},
@@ -627,7 +634,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["irmovl 3,ecx" , "irmovl 2,ecx" , "nop" , "nop" , "je 25"],
 	"REGVALUE" : 
 	{
@@ -712,7 +720,8 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
 "CODE" : ["halt" , "irmovl 3,ecx" , "irmovl 2,ecx" , "nop" , "nop"],
 	"REGVALUE" : 
 	{
@@ -797,8 +806,9 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
-"CODE" : ["halt" , "irmovl 3,ecx" , "irmovl 3,ecx" , "irmovl 2,ecx" , "nop"],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
+"CODE" : ["halt" , "halt" , "irmovl 3,ecx" , "irmovl 2,ecx" , "nop"],
 	"REGVALUE" : 
 	{
 		"eax" : "        1",
@@ -815,13 +825,13 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"37"}	],
+		{"key":"predPC" , "value":"32"}	],
 	"DECODE" : [
-		{"key":"stat" , "value":"2"},
+		{"key":"stat" , "value":"4"},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"1"},
-		{"key":"valC" , "value":"3"},
-		{"key":"valP" , "value":"37"}
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"0"},
+		{"key":"valP" , "value":"32"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"1"},
@@ -882,8 +892,9 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
-"CODE" : ["halt" , "irmovl 3,ecx" , "irmovl 3,ecx" , "irmovl 3,ecx" , "irmovl 2,ecx"],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
+"CODE" : ["halt" , "halt" , "halt" , "irmovl 3,ecx" , "irmovl 2,ecx"],
 	"REGVALUE" : 
 	{
 		"eax" : "        1",
@@ -900,17 +911,17 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"43"}	],
+		{"key":"predPC" , "value":"33"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"2"},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"1"},
-		{"key":"valC" , "value":"3"},
-		{"key":"valP" , "value":"43"}
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"0"},
+		{"key":"valP" , "value":"33"}
 	],
 	"EXECUTE" : [
-		{"key":"stat" , "value":"2"},
-		{"key":"valC" , "value":3},
+		{"key":"stat" , "value":"4"},
+		{"key":"valC" , "value":0},
 		{"key":"valA" , "value":0},
 		{"key":"valB" , "value":0},
 		{"key":"dstE" , "value":15},
@@ -967,8 +978,9 @@ complete_data = [
 		{"addr" : "27" , "val" : "003|0x03"},
 		{"addr" : "28" , "val" : "000|0x00"},
 		{"addr" : "29" , "val" : "000|0x00"},
-		{"addr" : "30" , "val" : "000|0x00"}],
-"CODE" : ["halt" , "irmovl 3,ecx" , "irmovl 3,ecx" , "irmovl 3,ecx" , "irmovl 3,ecx"],
+		{"addr" : "30" , "val" : "000|0x00"},
+		{"addr" : "31" , "val" : "000|0x00"}],
+"CODE" : ["halt" , "halt" , "halt" , "halt" , "irmovl 3,ecx"],
 	"REGVALUE" : 
 	{
 		"eax" : "        1",
@@ -985,17 +997,17 @@ complete_data = [
 	"FETCH" :
 	[
 		{"key":"stat" , "value":"1"},
-		{"key":"predPC" , "value":"49"}	],
+		{"key":"predPC" , "value":"34"}	],
 	"DECODE" : [
 		{"key":"stat" , "value":"2"},
 		{"key":"rA" , "value":"15"},
-		{"key":"rB" , "value":"1"},
-		{"key":"valC" , "value":"3"},
-		{"key":"valP" , "value":"49"}
+		{"key":"rB" , "value":"15"},
+		{"key":"valC" , "value":"0"},
+		{"key":"valP" , "value":"34"}
 	],
 	"EXECUTE" : [
 		{"key":"stat" , "value":"2"},
-		{"key":"valC" , "value":3},
+		{"key":"valC" , "value":0},
 		{"key":"valA" , "value":3},
 		{"key":"valB" , "value":3},
 		{"key":"dstE" , "value":15},
