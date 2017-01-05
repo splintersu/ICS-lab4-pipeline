@@ -1,0 +1,5 @@
+30 F0 04 00 00 00	|	irmovl 4 , %eax
+30 F3 14 00 00 00	|	irmovl 20 , %ebx
+40 03 00 00 00 00	|	rmmovl %eax , 0 ( %ebx )
+30 F7 01 00 00 00	|	irmovl 1 , %edi
+00					|	halt
